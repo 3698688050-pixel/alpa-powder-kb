@@ -39,15 +39,15 @@
   <text x="330" y="92" class="s" text-anchor="middle">加料喷射器</text>
   <!-- 切线喷嘴：沿圆周切向喷射 -->
   <g stroke="#B0470E" stroke-width="1.6" fill="none">
-    <path d="M162 156 L204 170"/>
-    <path d="M498 156 L456 170"/>
-    <path d="M162 244 L204 230"/>
-    <path d="M498 244 L456 230"/>
+    <path d="M180 162 L218 176"/>
+    <path d="M480 162 L442 176"/>
+    <path d="M180 238 L218 224"/>
+    <path d="M480 238 L442 224"/>
   </g>
-  <text x="154" y="148" class="s" text-anchor="end">切线喷嘴</text>
+  <text x="174" y="286" class="s" text-anchor="end">切线喷嘴（切线方向喷射）</text>
   <text x="506" y="148" class="s">多喷嘴，无传动部件</text>
   <!-- 自分级：内圈细粉从中心出 -->
   <path d="M330" y1="200" x2="330" y2="134" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqp)"/>
   <text x="350" y="126" class="s">细粉从中心引出</text>
-  <text x="200" y="296" class="s">物料沿壁面切向撞击摩擦而粉碎</text></g>
+  <text x="330" y="312" class="s" text-anchor="middle">物料沿壁面切向撞击摩擦而粉碎</text></g>
 </svg>

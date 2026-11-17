@@ -47,7 +47,7 @@
   <!-- 齿圈 -->
   <circle cx="234" cy="200" r="62" fill="none" stroke="#8B9098" stroke-width="1.2" stroke-dasharray="4 4"/>
   <text x="234" y="120" class="h" text-anchor="middle">粉碎盘＋齿圈</text>
-  <text x="234" y="292" class="s" text-anchor="middle">冲击、剪切、摩擦</text>
+  <text x="234" y="316" class="s" text-anchor="middle">冲击、剪切、摩擦</text>
   <!-- 分级轮 -->
   <circle cx="426" cy="200" r="40" fill="none" stroke="#1A4FA0" stroke-width="1.6"/>
   <circle cx="426" cy="200" r="11" fill="none" stroke="#1A4FA0" stroke-width="1.3"/>
@@ -80,15 +80,16 @@
                   stroke="#1A4FA0" stroke-width="1.1"/><line x1="435.9" y1="195.2"
                   x2="462.0" y2="182.6"
                   stroke="#1A4FA0" stroke-width="1.1"/>
-  <text x="426" y="120" class="h" text-anchor="middle">分级轮</text>
-  <text x="426" y="292" class="s" text-anchor="middle">变频调速即调粒度</text>
+  <text x="426" y="112" class="h" text-anchor="middle">分级轮</text>
+  <line x1="426" y1="118" x2="426" y2="152" stroke="#C9CCC7" stroke-width="1"/>
+  <text x="426" y="296" class="s" text-anchor="middle">变频调速即调粒度</text>
   <!-- 进料 / 出料 -->
   <line x1="196" y1="88" x2="196" y2="132" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-csm)"/>
   <text x="196" y="80" class="s" text-anchor="middle">进料</text>
-  <path d="M466 200 H600" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-csm)"/>
-  <text x="474" y="188" class="s">细粉 → 收集</text>
+  <path d="M466 196 H600" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-csm)"/>
+  <text x="480" y="236" class="s">细粉 → 收集</text>
   <!-- 粗粉回流 -->
-  <path d="M370 268 v26 H196 v-20" stroke="#8B9098" stroke-width="1.2" stroke-dasharray="6 4"
+  <path d="M370 268 v34 H196 v-20" stroke="#8B9098" stroke-width="1.2" stroke-dasharray="6 4"
         fill="none" marker-end="url(#ar-csm)"/>
-  <text x="378" y="308" class="s">粗粉返回粉碎区</text></g>
+  <text x="378" y="316" class="s">粗粉返回粉碎区</text></g>
 </svg>

@@ -146,16 +146,17 @@ function mql(id) {
   </g>
   <circle cx="${cx}" cy="300" r="3" fill="${C.accent}"/>
   <!-- 细粉 -->
-  <path d="M${cx + 114} 150 H600" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 122}" y="138" class="s">细粉出口（线速度 70m/s）</text>
+  <path d="M${cx + 114} 196 H580" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 122}" y="214" class="s">细粉出口（线速度 70m/s）</text>
   <!-- 粗粉 -->
   <path d="M${cx - 104} 190 H158 v96 H${cx - 84}" stroke="${C.line}" stroke-width="1.2"
         stroke-dasharray="6 4" fill="none" marker-end="url(#ar-${id})"/>
   <text x="158" y="180" class="s">粗粉回落</text>
-  <text x="${cx + 128}" y="112" class="h">立式单转子</text>
-  <text x="${cx + 128}" y="130" class="s">投资省、易做大产能</text>
-  <text x="${cx - 118}" y="100" class="h" text-anchor="end">长轴传动</text>
-  <text x="${cx - 118}" y="118" class="s" text-anchor="end">转速受轴长限制</text>`;
+  <text x="${cx + 128}" y="118" class="h">立式单转子</text>
+  <text x="${cx + 128}" y="136" class="s">投资省、易做大产能</text>
+  <text x="${cx - 150}" y="300" class="h" text-anchor="end">长轴传动</text>
+  <text x="${cx - 150}" y="318" class="s" text-anchor="end">转速受轴长限制</text>
+  <line x1="${cx - 144}" y1="296" x2="${cx - 6}" y2="240" stroke="${C.soft}" stroke-width="1"/>`;
 }
 
 /* ============ MQP 圆盘式 ============ */
@@ -171,17 +172,17 @@ function mqp(id) {
   <text x="${cx}" y="${cy - 108}" class="s" text-anchor="middle">加料喷射器</text>
   <!-- 切线喷嘴：沿圆周切向喷射 -->
   <g stroke="${C.accent}" stroke-width="1.6" fill="none">
-    <path d="M${cx - 168} ${cy - 44} L${cx - 126} ${cy - 30}"/>
-    <path d="M${cx + 168} ${cy - 44} L${cx + 126} ${cy - 30}"/>
-    <path d="M${cx - 168} ${cy + 44} L${cx - 126} ${cy + 30}"/>
-    <path d="M${cx + 168} ${cy + 44} L${cx + 126} ${cy + 30}"/>
+    <path d="M${cx - 150} ${cy - 38} L${cx - 112} ${cy - 24}"/>
+    <path d="M${cx + 150} ${cy - 38} L${cx + 112} ${cy - 24}"/>
+    <path d="M${cx - 150} ${cy + 38} L${cx - 112} ${cy + 24}"/>
+    <path d="M${cx + 150} ${cy + 38} L${cx + 112} ${cy + 24}"/>
   </g>
-  <text x="${cx - 176}" y="${cy - 52}" class="s" text-anchor="end">切线喷嘴</text>
+  <text x="${cx - 156}" y="${cy + 86}" class="s" text-anchor="end">切线喷嘴（切线方向喷射）</text>
   <text x="${cx + 176}" y="${cy - 52}" class="s">多喷嘴，无传动部件</text>
   <!-- 自分级：内圈细粉从中心出 -->
   <path d="M${cx}" y1="${cy}" x2="${cx}" y2="${cy - 66}" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
   <text x="${cx + 20}" y="${cy - 74}" class="s">细粉从中心引出</text>
-  <text x="${cx - 130}" y="${cy + 96}" class="s">物料沿壁面切向撞击摩擦而粉碎</text>`;
+  <text x="${cx}" y="${cy + 112}" class="s" text-anchor="middle">物料沿壁面切向撞击摩擦而粉碎</text>`;
 }
 
 /* ============ 蒸汽动能磨 ============ */
@@ -193,7 +194,7 @@ function steam(id) {
   <rect x="${cx - 32}" y="338" width="64" height="24" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <!-- 保温层：双线外包 -->
   <path d="M${cx - 132} 90 v176 M${cx + 132} 90 v176" stroke="${C.line}" stroke-width="1" stroke-dasharray="3 5"/>
-  <text x="${cx + 140}" y="96" class="s">保温层</text>
+  <text x="${cx + 140}" y="82" class="s">保温层</text>
   <!-- 高温蒸汽入口 -->
   <rect x="${cx - 22}" y="62" width="44" height="38" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <line x1="${cx}" y1="24" x2="${cx}" y2="62" stroke="${C.accent}" stroke-width="1.8" marker-end="url(#ar-${id})"/>
@@ -214,13 +215,13 @@ function steam(id) {
   </g>
   <circle cx="${cx}" cy="288" r="3.2" fill="${C.accent}"/>
   <text x="${cx + 8}" y="280" class="s">喷嘴出口 1020 m/s</text>
-  <path d="M${cx + 126} 172 H604" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 134}" y="160" class="s">细粉 → 保温收集</text>
+  <path d="M${cx + 132} 210 H590" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 140}" y="228" class="s">细粉 → 保温收集</text>
   <path d="M${cx - 116} 202 H152 v100 H${cx - 92}" stroke="${C.line}" stroke-width="1.2"
         stroke-dasharray="6 4" fill="none" marker-end="url(#ar-${id})"/>
   <text x="152" y="192" class="s">粗粉回落</text>
-  <text x="${cx + 140}" y="112" class="h">干法亚微米</text>
-  <text x="${cx + 140}" y="130" class="s">D50 0.5μm 起</text>`;
+  <text x="${cx + 144}" y="108" class="h">干法亚微米</text>
+  <text x="${cx + 144}" y="126" class="s">D50 0.5μm 起</text>`;
 }
 
 /* ============ CSM 空气分级磨 ============ */
@@ -242,7 +243,7 @@ function csm(id) {
   <!-- 齿圈 -->
   <circle cx="234" cy="200" r="62" fill="none" stroke="${C.line}" stroke-width="1.2" stroke-dasharray="4 4"/>
   <text x="234" y="120" class="h" text-anchor="middle">粉碎盘＋齿圈</text>
-  <text x="234" y="292" class="s" text-anchor="middle">冲击、剪切、摩擦</text>
+  <text x="234" y="316" class="s" text-anchor="middle">冲击、剪切、摩擦</text>
   <!-- 分级轮 -->
   <circle cx="${cx + 96}" cy="200" r="40" fill="none" stroke="${C.blue}" stroke-width="1.6"/>
   <circle cx="${cx + 96}" cy="200" r="11" fill="none" stroke="${C.blue}" stroke-width="1.3"/>
@@ -252,17 +253,18 @@ function csm(id) {
                   x2="${(cx + 96 + Math.cos(a) * 40).toFixed(1)}" y2="${(200 + Math.sin(a) * 40).toFixed(1)}"
                   stroke="${C.blue}" stroke-width="1.1"/>`;
   }).join('')}
-  <text x="${cx + 96}" y="120" class="h" text-anchor="middle">分级轮</text>
-  <text x="${cx + 96}" y="292" class="s" text-anchor="middle">变频调速即调粒度</text>
+  <text x="${cx + 96}" y="112" class="h" text-anchor="middle">分级轮</text>
+  <line x1="${cx + 96}" y1="118" x2="${cx + 96}" y2="152" stroke="${C.soft}" stroke-width="1"/>
+  <text x="${cx + 96}" y="296" class="s" text-anchor="middle">变频调速即调粒度</text>
   <!-- 进料 / 出料 -->
   <line x1="196" y1="88" x2="196" y2="132" stroke="${C.ink}" stroke-width="1.4" marker-end="url(#ar-${id})"/>
   <text x="196" y="80" class="s" text-anchor="middle">进料</text>
-  <path d="M${cx + 136} 200 H600" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 144}" y="188" class="s">细粉 → 收集</text>
+  <path d="M${cx + 136} 196 H600" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 150}" y="236" class="s">细粉 → 收集</text>
   <!-- 粗粉回流 -->
-  <path d="M${cx + 40} 268 v26 H196 v-20" stroke="${C.line}" stroke-width="1.2" stroke-dasharray="6 4"
+  <path d="M${cx + 40} 268 v34 H196 v-20" stroke="${C.line}" stroke-width="1.2" stroke-dasharray="6 4"
         fill="none" marker-end="url(#ar-${id})"/>
-  <text x="${cx + 48}" y="308" class="s">粗粉返回粉碎区</text>`;
+  <text x="${cx + 48}" y="316" class="s">粗粉返回粉碎区</text>`;
 }
 
 /* ============ 针盘磨 ============ */
@@ -285,7 +287,7 @@ function pin(id) {
   <line x1="236" y1="96" x2="236" y2="138" stroke="${C.ink}" stroke-width="1.4" marker-end="url(#ar-${id})"/>
   <text x="236" y="88" class="s" text-anchor="middle">进料（中心）</text>
   <path d="M${cx + 96} 200 H596" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 104}" y="190" class="s">无筛网，出料流畅</text>
+  <text x="${cx + 104}" y="222" class="s">无筛网，出料流畅</text>
   <text x="196" y="292" class="s">双动力可选，线速度 200 m/s 以上</text>
   <text x="196" y="312" class="s">装配间隙控制 2 至 3 mm</text>`;
 }
@@ -323,7 +325,7 @@ function rtm(id) {
   <!-- 多层涡流刀头 -->
   ${[0, 1, 2, 3].map(i => `<line x1="${cx - 92}" y1="${152 + i * 30}" x2="${cx + 92}" y2="${152 + i * 30}"
         stroke="${C.ink}" stroke-width="1.3"/>
-      <text x="${cx + 100}" y="${156 + i * 30}" class="s">刀头 ${i + 1}</text>`).join('')}
+      <text x="${cx + 100}" y="${156 + i * 30}" class="s">第 ${i + 1} 层</text>`).join('')}
   <!-- 涡流回旋箭头 -->
   <path d="M${cx - 60} 200 a46 46 0 1 1 92 0" fill="none" stroke="${C.accent}" stroke-width="1.4"
         marker-end="url(#ar-${id})" stroke-dasharray="7 5"/>
@@ -331,8 +333,8 @@ function rtm(id) {
   <text x="${cx}" y="232" class="s" text-anchor="middle">停留时间极短，温升低</text>
   <line x1="${cx}" y1="78" x2="${cx}" y2="120" stroke="${C.ink}" stroke-width="1.4" marker-end="url(#ar-${id})"/>
   <text x="${cx}" y="70" class="s" text-anchor="middle">进料</text>
-  <path d="M${cx + 126} 176 H626" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 134}" y="164" class="s">出料</text>
+  <path d="M${cx + 126} 236 H626" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 134}" y="254" class="s">出料</text>
   <text x="${cx - 126}" y="300" class="s">专治团聚体：打散而不破坏一次粒径</text>`;
 }
 
@@ -380,17 +382,17 @@ function classifier(id) {
                   x2="${(cx + Math.cos(a) * 46).toFixed(1)}" y2="${(156 + Math.sin(a) * 46).toFixed(1)}"
                   stroke="${C.blue}" stroke-width="1"/>`;
   }).join('')}
-  <text x="${cx + 120}" y="140" class="h">分级涡轮</text>
-  <text x="${cx + 120}" y="158" class="s">立式转速低、耐磨损</text>
+  <text x="${cx + 128}" y="132" class="h">分级涡轮</text>
+  <text x="${cx + 128}" y="150" class="s">立式转速低、耐磨损</text>
   <!-- 二次风淘洗 -->
   <g stroke="${C.accent}" stroke-width="1.3" fill="none">
     <path d="M${cx - 92} 268 v-34" marker-end="url(#ar-${id})"/>
     <path d="M${cx + 92} 268 v-34" marker-end="url(#ar-${id})"/>
   </g>
-  <text x="${cx - 100}" y="286" class="s" text-anchor="end">二次风淘洗</text>
+  <text x="${cx - 100}" y="262" class="s" text-anchor="end">二次风淘洗</text>
   <line x1="${cx - 96}" y1="196" x2="${cx + 106}" y2="196" stroke="${C.soft}" stroke-width="1" stroke-dasharray="5 4"/>
-  <path d="M${cx + 106} 156 H612" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 114}" y="144" class="s">细粉 → 收集</text>
+  <path d="M${cx + 106} 226 H560" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 114}" y="212" class="s">细粉 → 收集</text>
   <text x="${cx - 112}" y="86" class="s" text-anchor="end">本设备不粉碎，只按粒径切开</text>`;
 }
 

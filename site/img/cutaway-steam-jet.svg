@@ -39,7 +39,7 @@
   <rect x="298" y="338" width="64" height="24" fill="url(#steel-steam-jet)" stroke="#15171A" stroke-width="1.4"/>
   <!-- 保温层：双线外包 -->
   <path d="M198 90 v176 M462 90 v176" stroke="#8B9098" stroke-width="1" stroke-dasharray="3 5"/>
-  <text x="470" y="96" class="s">保温层</text>
+  <text x="470" y="82" class="s">保温层</text>
   <!-- 高温蒸汽入口 -->
   <rect x="308" y="62" width="44" height="38" fill="url(#steel-steam-jet)" stroke="#15171A" stroke-width="1.4"/>
   <line x1="330" y1="24" x2="330" y2="62" stroke="#B0470E" stroke-width="1.8" marker-end="url(#ar-steam-jet)"/>
@@ -83,11 +83,11 @@
   </g>
   <circle cx="330" cy="288" r="3.2" fill="#B0470E"/>
   <text x="338" y="280" class="s">喷嘴出口 1020 m/s</text>
-  <path d="M456 172 H604" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-steam-jet)"/>
-  <text x="464" y="160" class="s">细粉 → 保温收集</text>
+  <path d="M462 210 H590" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-steam-jet)"/>
+  <text x="470" y="228" class="s">细粉 → 保温收集</text>
   <path d="M214 202 H152 v100 H238" stroke="#8B9098" stroke-width="1.2"
         stroke-dasharray="6 4" fill="none" marker-end="url(#ar-steam-jet)"/>
   <text x="152" y="192" class="s">粗粉回落</text>
-  <text x="470" y="112" class="h">干法亚微米</text>
-  <text x="470" y="130" class="s">D50 0.5μm 起</text></g>
+  <text x="474" y="108" class="h">干法亚微米</text>
+  <text x="474" y="126" class="s">D50 0.5μm 起</text></g>
 </svg>
