@@ -99,55 +99,48 @@ function header(active) {
 /* ---------- 视图：总览 ---------- */
 function viewIndex() {
   const d = KB.data;
-  const byFam = d.families.map(f => ({
-    f, ps: d.products.filter(p => p.family === f.id)
-  }));
   return `<main>
     <div class="lede">
-      <h1>把「选什么设备、为什么」这件事，做成可以查的库</h1>
-      <p>全部内容来自 2022 内部培训手册、2024 版产品样册与中英文官网。每一条选型边界都标了出处，
-      不写没有出处的推断。目的不是背参数，而是让你在客户说出物料和粒度的那一刻，
-      能立刻给出路线、机型和一个站得住的理由。</p>
+      <h1>把「选什么设备、为什么」做成可以查的库</h1>
+      <p>内容来自 2022 内部培训手册、2024 产品样册与中英文官网。每条选型边界都标了出处，不写没有出处的推断。
+      目的不是背参数，而是客户说出物料和粒度的那一刻，你能立刻给出路线、机型和站得住的理由。</p>
     </div>
 
     <div class="stats">
-      <div><b>${d.products.length}</b><small>产品系列</small></div>
-      <div><b>${d.industries.length}</b><small>行业方案</small></div>
-      <div><b>${d.materials.length}</b><small>物料属性</small></div>
-      <div><b>${d.decision.quick_answers.length}</b><small>选型问答</small></div>
-      <div><b>${d.decision.size_routes.length}</b><small>条粒度路线</small></div>
+      <div><b>${d.products.length}</b><small>产品系列，每个都写了边界与代价</small></div>
+      <div><b>${d.industries.length}</b><small>行业方案，难点到答法逐条对应</small></div>
+      <div><b>${d.materials.length}</b><small>物料密度、硬度与易磨性</small></div>
+      <div><b>${d.decision.quick_answers.length}</b><small>客户问出口就能答的速答</small></div>
     </div>
 
-    <h2>一张图看懂产品谱系</h2>
-    <p>公司所有设备最终只回答两个问题：<b style="color:var(--ink)">把料磨细</b>，还是<b style="color:var(--ink)">把粉切段</b>。
-    磨细又分「靠气流自撞」与「靠转子打」，切段只有分级机一类。下面按这个逻辑分组。</p>
-    ${byFam.map(({ f, ps }) => `
-      <div class="dec">
-        <div class="q">${esc(f.cn)} · ${esc(f.en)}</div>
-        <div class="a" style="grid-template-columns:1fr">
-          <div class="res" style="padding:14px 16px">
-            <div style="margin-bottom:10px;color:var(--ink-2);font-size:13px">${esc(f.positioning)}</div>
-            ${ps.map(p => `<a href="product.html?id=${p.id}" style="display:flex;justify-content:space-between;gap:12px;
-              padding:8px 0;border-top:1px solid var(--line)">
-              <span>${esc(p.cn)}<span class="sub" style="margin-left:8px">${esc(p.cname)}</span></span>
-              <span class="mono" style="color:var(--accent);font-size:12px">${rng(p)}</span></a>`).join('')}
-          </div>
-        </div>
-      </div>`).join('')}
+    <h2>产品谱系</h2>
+    <p>所有设备只回答两个问题：把料<b>磨细</b>，还是把粉<b>切段</b>。磨细又分靠气流自撞与靠转子打；切段只有分级机一类。</p>
+    <div class="tw"><table>
+      <thead><tr><th>族</th><th>系列</th><th>粒度 D50</th><th>产能</th><th>定位</th></tr></thead>
+      <tbody>${d.families.map(f => {
+        const ps = d.products.filter(p => p.family === f.id);
+        return ps.map((p, i) => `<tr>
+          ${i === 0 ? `<td rowspan="${ps.length}"><b>${esc(f.cn)}</b><br><span class="sub">${ps.length} 个系列</span></td>` : ''}
+          <td><a href="product.html?id=${p.id}">${esc(p.cn)}</a><br><span class="sub">${esc(p.cname)}</span></td>
+          <td class="num">${p.size_range ? p.size_range.d50_min + '~' + p.size_range.d50_max : '—'} μm</td>
+          <td class="num">${p.capacity_tph ? p.capacity_tph + ' t/h' : '—'}</td>
+          <td>${esc((f.positioning || '').slice(0, 40))}${i === 0 ? '…' : ''}</td>
+        </tr>`).join('');
+      }).join('')}</tbody>
+    </table></div>
 
-    <h2>这个库怎么用</h2>
+    <h2>怎么用这个库</h2>
     <div class="track">
       <div class="step"><div class="no">01</div><div class="bd"><b>先走一遍学习路径</b>
-        <span>六步，从「为什么分气流和机械」到「能对客户讲清楚」。约两小时。</span></div></div>
-      <div class="step"><div class="no">02</div><div class="bd"><b>遇到具体客户，直接查选型决策</b>
-        <span>按粒度、硬度、水分、温度四条线，给出路线与理由。</span></div></div>
+        <span>六步，从「为什么分气流和机械」到「能对客户讲清楚」，约两小时，末尾三道自测题。</span></div></div>
+      <div class="step"><div class="no">02</div><div class="bd"><b>遇到具体客户，查选型决策</b>
+        <span>按粒度、硬度、水分、温度四条线，直接给出路线与理由。</span></div></div>
       <div class="step"><div class="no">03</div><div class="bd"><b>卡住时查物料表与目数换算</b>
         <span>客户说「200 目」，你得知道是 75μm；说「石英」，你得知道莫氏 7 不能上机械磨。</span></div></div>
     </div>
 
-    <div class="note"><b>关于数据边界：</b>本库只收录公开与内部培训资料里的信息。
-    两份「机械粉碎样册」在上传时被截断为 25MB 而无法解析，故机械磨系列的细节以培训手册与官网为准；
-    凡手册与官网口径冲突处（如分级转子线速度 80m/s 与 65m/s），两说并存并标注来源。</div>
+    <div class="note"><b>数据边界：</b>两份「机械粉碎样册」在上传时被截断为 25MB 而无法解析，
+    机械磨系列细节以培训手册与官网为准。手册与官网口径冲突处（如分级转子线速度 80m/s 与 65m/s），两说并存并标注来源。</div>
   </main>`;
 }
 
@@ -166,10 +159,9 @@ function viewProductList() {
         <a class="prow" href="product.html?id=${p.id}" data-fam="${p.family}">
           <div>
             <div class="nm">${esc(p.cn)}<em>${esc(p.en)}</em></div>
-            <div class="meta">${esc(p.cname)} · ${esc(famName(p.family))}</div>
-            <div style="margin-top:7px">${(p.series || []).slice(0, 4).map(s => `<span class="chip">${esc(s)}</span>`).join('')}</div>
+            <div class="meta">${esc(famName(p.family))}${(p.series || []).length ? ' · ' + p.series.map(esc).join(' / ') : ''}</div>
           </div>
-          <div class="rng">${rng(p)}</div>
+          <div class="rng">${rng(p)}<small>${p.capacity_tph ? p.capacity_tph + ' t/h 单套' : ''}</small></div>
         </a>`).join('')}
     </div>
   </main>`;
@@ -224,7 +216,7 @@ function viewProduct() {
 
     ${p.applications?.length ? `<h2>适用物料与行业</h2>
       <div>${p.applications.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>
-      ${inds.length ? `<p style="margin-top:12px">对应行业方案：${inds.map(i => `<a href="industry.html?id=${i.id}" class="chip acc">${esc(i.cn)}</a>`).join(' ')}</p>` : ''}
+      ${inds.length ? `<p style="margin-top:12px">对应行业方案：${inds.map(i => `<a href="industry.html?id=${i.id}">${esc(i.cn)}</a>`).join('、')}</p>` : ''}
       ${p.materials ? `<h3>具体材料清单</h3>${Object.entries(p.materials).map(([k, v]) =>
         `<div style="margin-bottom:10px"><span class="sub">${k === 'cathode' ? '正极' : k === 'anode' ? '负极' : esc(k)}</span><br>${v.map(x => `<span class="chip">${esc(x)}</span>`).join('')}</div>`).join('')}` : ''}
     ` : ''}
@@ -234,9 +226,9 @@ function viewProduct() {
     ${p.learn_why ? `<div class="why"><b>学习要点 · 为什么它存在</b><p>${esc(p.learn_why)}</p></div>` : ''}
 
     <h2>出处</h2>
-    <div>${(p.source || []).map(s => `<span class="chip">${esc(
+    <div class="chip-list">${(p.source || []).map(s => `<span class="chip">${esc(
       String(s).replace('manual', '培训手册').replace('web_cn', '官网中文').replace('web_en', '官网英文'))}</span>`).join('')}</div>
-    ${p.en_page && p.en_page !== '/' ? `<p style="margin-top:12px"><a href="https://www.alpapowder.com/machines/${p.en_page}/" target="_blank" rel="noopener">官网英文页 ↗</a></p>` : ''}
+    ${p.en_page && p.en_page !== '/' ? `<p style="margin-top:12px"><a href="https://www.alpapowder.com/machines/${p.en_page}/">官网英文页 ↗</a></p>` : ''}
   </main>`;
 }
 
@@ -258,7 +250,7 @@ function viewDecision() {
       ${d.size_routes.map(r => `<div class="a">
         <div class="cond">${esc(r.mesh)}</div>
         <div class="res"><b>${esc(r.route)}</b> ${r.products.map(pw).join(' ')}
-          <span class="sub" style="display:block;margin-top:2px">约 ${esc(r.um)}</span>
+          <span class="why-t" style="display:block;margin-top:3px">${esc(r.um)}</span>
           <span class="why-t">${esc(r.reason)}</span></div>
       </div>`).join('')}
     </div>
@@ -266,12 +258,11 @@ function viewDecision() {
     <h2>二 · 物料属性做否决</h2>
     <p>粒度告诉你去哪条路，物料属性负责把不成立的路砍掉。下面每一条都能直接否掉机械磨。</p>
     <div class="tw"><table>
-      <thead><tr><th>属性</th><th>判定</th><th>为什么</th></tr></thead>
+      <thead><tr><th style="width:120px">属性</th><th style="width:240px">判定</th><th>怎么处理</th></tr></thead>
       <tbody>${d.material_gates.map(g => `<tr>
-        <td><b style="color:var(--ink)">${esc(g.attr)}</b></td>
-        <td>${esc(g.mechanical_limit || g.detail)}${g.jet_limit ? `<br><span class="sub">气流磨：${esc(g.jet_limit)}</span>` : ''}</td>
-        <td style="color:var(--ink-2)">${esc(g.solution || (g.detail && g.mechanical_limit ? g.detail : ''))}
-          ${g.detail && g.type === 'array' ? '' : ''}</td>
+        <td><b>${esc(g.attr)}</b></td>
+        <td>${esc(g.mechanical_limit || '')}${g.jet_limit ? `<br><span class="sub">气流磨：${esc(g.jet_limit)}</span>` : ''}</td>
+        <td>${esc(g.solution || g.detail || '')}</td>
       </tr>`).join('')}</tbody>
     </table></div>
 
@@ -363,8 +354,8 @@ function viewIndustry() {
       <tbody>${i.solutions_by_problem.map(s => `<tr><td><b style="color:var(--ink)">${esc(s.problem)}</b></td>
         <td style="color:var(--ink-2)">${esc(s.approach)}</td></tr>`).join('')}</tbody></table></div>` : ''}
     ${i.detail ? `<h3>四个支柱</h3><ul class="tight">${Object.entries(i.detail).map(([k, v]) => `<li><strong>${esc(k)}</strong>：${esc(v)}</li>`).join('')}</ul>` : ''}
-    ${i.pillars ? `<p>${i.pillars.map(p => `<span class="chip acc">${esc(p)}</span>`).join('')}</p>` : ''}
-    ${i.tech ? `<h3>专长技术</h3><div>${i.tech.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</div>` : ''}
+    ${i.pillars ? `<p>${i.pillars.join(' · ')}</p>` : ''}
+    ${i.tech ? `<h3>专长技术</h3><div class="chip-list">${i.tech.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</div>` : ''}
     ${i.materials ? `<h3>具体材料</h3>${Object.entries(i.materials).map(([k, v]) => `<div style="margin-bottom:10px">
       <span class="sub">${k === 'cathode' ? '正极' : k === 'anode' ? '负极' : esc(k)}</span><br>
       ${v.map(x => `<span class="chip">${esc(x)}</span>`).join('')}</div>`).join('')}` : ''}
@@ -372,11 +363,11 @@ function viewIndustry() {
     ${i.special ? `<div class="note"><b>专机：</b>${esc(i.special)}</div>` : ''}
 
     <h2>用哪些设备</h2>
-    <div>${plist.map(p => `<a href="product.html?id=${p.id}" class="chip acc">${esc(p.cn)} · ${rng(p)}</a>`).join(' ')}</div>
+    <div class="chip-list">${plist.map(p => `<a href="product.html?id=${p.id}" class="chip">${esc(p.cn)}</a>`).join('')}</div>
 
     <h2>出处</h2>
-    <div>${[].concat(i.source || []).map(s => `<span class="chip">${esc(String(s).replace('manual', '培训手册'))}</span>`).join('')}</div>
-    ${i.web ? `<p style="margin-top:12px"><a href="https://www.alpapowder.cn/applications/${i.web}.html" target="_blank" rel="noopener">官网行业页 ↗</a></p>` : ''}
+    <div class="chip-list">${[].concat(i.source || []).map(s => `<span class="chip">${esc(String(s).replace('manual', '培训手册'))}</span>`).join('')}</div>
+    ${i.web ? `<p style="margin-top:12px"><a href="https://www.alpapowder.cn/applications/${i.web}.html">官网行业页 ↗</a></p>` : ''}
   </main>`;
 }
 
@@ -527,8 +518,8 @@ function render() {
 
 function footer() {
   return `<footer>
-    <div>ALPA 粉体选型知识库 · 内容来自 2022 内部培训手册、2024 产品样册与 <a href="https://www.alpapowder.cn" target="_blank" rel="noopener">中文官网</a> /
-    <a href="https://www.alpapowder.com" target="_blank" rel="noopener">英文官网</a>。</div>
+    <div>ALPA 粉体选型知识库 · 内容来自 2022 内部培训手册、2024 产品样册与 <a href="https://www.alpapowder.cn">中文官网</a> /
+    <a href="https://www.alpapowder.com">英文官网</a>。</div>
     <div style="margin-top:6px">参数随物料与工艺而变，报价前以工程师实验数据为准。本库仅作学习与内部参考。</div>
   </footer>`;
 }
