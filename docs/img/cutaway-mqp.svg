@@ -27,28 +27,40 @@
 <rect width="860" height="470" fill="#FBFBF9"/>
 <!-- 整机居中：主体锚点 (140..580, 60..420) 平移到画布中心 -->
 <g transform="translate(28, 6)">
-  <!-- 扁圆盘腔：横躺的圆盘 + 切线喷嘴 -->
+  <!-- 圆盘腔体：整体居中于画布 -->
   <g>
-     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#steel-mqp)" stroke="none"/>
-     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#tex-mqp)" opacity=".32" stroke="none"/>
-     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+     <path d="M262 235 a168 92 0 1 0 336 0 a168 92 0 1 0 -336 0 z" fill="url(#steel-mqp)" stroke="none"/>
+     <path d="M262 235 a168 92 0 1 0 336 0 a168 92 0 1 0 -336 0 z" fill="url(#tex-mqp)" opacity=".32" stroke="none"/>
+     <path d="M262 235 a168 92 0 1 0 336 0 a168 92 0 1 0 -336 0 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
-  <ellipse cx="330" cy="200" rx="96" ry="48" fill="none" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 内圈：分级区 -->
+  <ellipse cx="430" cy="235" rx="97.44" ry="51.52" fill="none"
+           stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>
   <!-- 中心进料喷射器 -->
-  <circle cx="330" cy="200" r="15" fill="url(#steel-mqp)" stroke="#15171A" stroke-width="1.4"/>
-  <line x1="330" y1="100" x2="330" y2="134" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-mqp)"/>
-  <text x="330" y="92" class="s" text-anchor="middle">加料喷射器</text>
-  <!-- 切线喷嘴：沿圆周切向喷射 -->
-  <g stroke="#B0470E" stroke-width="1.6" fill="none">
-    <path d="M180 162 L218 176"/>
-    <path d="M480 162 L442 176"/>
-    <path d="M180 238 L218 224"/>
-    <path d="M480 238 L442 224"/>
+  <circle cx="430" cy="235" r="17" fill="url(#steel-mqp)" stroke="#15171A" stroke-width="1.5"/>
+  <path d="M334 81 L404 145" stroke="#15171A" stroke-width="1.4"
+        fill="none" marker-end="url(#ar-mqp)"/>
+  <text x="330" y="73" class="s" text-anchor="end">加料喷射器</text>
+
+  <!-- 四组切线喷嘴：沿圆周切向，左右镜像 -->
+  <g stroke="#B0470E" stroke-width="1.8" fill="none">
+    <path d="M288 189 L336 207"/>
+    <path d="M572 189 L524 207"/>
+    <path d="M288 281 L336 263"/>
+    <path d="M572 281 L524 263"/>
   </g>
-  <text x="174" y="286" class="s" text-anchor="end">切线喷嘴（切线方向喷射）</text>
-  <text x="506" y="148" class="s">多喷嘴，无传动部件</text>
-  <!-- 自分级：内圈细粉从中心出 -->
-  <path d="M330" y1="200" x2="330" y2="134" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqp)"/>
-  <text x="350" y="126" class="s">细粉从中心引出</text>
-  <text x="330" y="312" class="s" text-anchor="middle">物料沿壁面切向撞击摩擦而粉碎</text></g>
+  <text x="250" y="313" class="s" text-anchor="end">切线喷嘴：高压气流沿壁面切向喷入</text>
+
+  <!-- 细粉从中心向上引出 -->
+  <path d="M430 218 V117" stroke="#1F6B43" stroke-width="1.7"
+        fill="none" marker-end="url(#arg-mqp)"/>
+  <text x="442" y="109" class="s">细粉从中心引出</text>
+
+  <!-- 结构说明 -->
+  <text x="612" y="173" class="h">无传动部件</text>
+  <text x="612" y="191" class="s">自分级结构</text>
+  <text x="612" y="213" class="s">无死角、无存料风险</text>
+  <text x="612" y="235" class="s">清洁与防爆验证最容易</text>
+
+  <text x="430" y="383" class="s" text-anchor="middle">物料沿壁面切向撞击、摩擦而粉碎，更适于团聚体打散还原</text></g>
 </svg>

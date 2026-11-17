@@ -178,28 +178,41 @@ function mql(id) {
 
 /* ============ MQP 圆盘式 ============ */
 function mqp(id) {
-  const cx = 330, cy = 200;
+  const cx = 430, cy = 235;
+  const RX = 168, RY = 92;      // 圆盘外缘（俯视是圆，画成扁圆表示盘面）
   return `
-  <!-- 扁圆盘腔：横躺的圆盘 + 切线喷嘴 -->
-  ${shell(id, `M${cx - 130} ${cy - 66} a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z`)}
-  <ellipse cx="${cx}" cy="${cy}" rx="96" ry="48" fill="none" stroke="${C.soft}" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 圆盘腔体：整体居中于画布 -->
+  ${shell(id, `M${cx - RX} ${cy} a${RX} ${RY} 0 1 0 ${RX * 2} 0 a${RX} ${RY} 0 1 0 ${-RX * 2} 0 z`)}
+  <!-- 内圈：分级区 -->
+  <ellipse cx="${cx}" cy="${cy}" rx="${RX * 0.58}" ry="${RY * 0.56}" fill="none"
+           stroke="${C.soft}" stroke-width="1" stroke-dasharray="5 4"/>
   <!-- 中心进料喷射器 -->
-  <circle cx="${cx}" cy="${cy}" r="15" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
-  <line x1="${cx}" y1="${cy - 100}" x2="${cx}" y2="${cy - 66}" stroke="${C.ink}" stroke-width="1.4" marker-end="url(#ar-${id})"/>
-  <text x="${cx}" y="${cy - 108}" class="s" text-anchor="middle">加料喷射器</text>
-  <!-- 切线喷嘴：沿圆周切向喷射 -->
-  <g stroke="${C.accent}" stroke-width="1.6" fill="none">
-    <path d="M${cx - 150} ${cy - 38} L${cx - 112} ${cy - 24}"/>
-    <path d="M${cx + 150} ${cy - 38} L${cx + 112} ${cy - 24}"/>
-    <path d="M${cx - 150} ${cy + 38} L${cx - 112} ${cy + 24}"/>
-    <path d="M${cx + 150} ${cy + 38} L${cx + 112} ${cy + 24}"/>
+  <circle cx="${cx}" cy="${cy}" r="17" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.5"/>
+  <path d="M${cx - 96} ${cy - RY - 62} L${cx - 26} ${cy - RY + 2}" stroke="${C.ink}" stroke-width="1.4"
+        fill="none" marker-end="url(#ar-${id})"/>
+  <text x="${cx - 100}" y="${cy - RY - 70}" class="s" text-anchor="end">加料喷射器</text>
+
+  <!-- 四组切线喷嘴：沿圆周切向，左右镜像 -->
+  <g stroke="${C.accent}" stroke-width="1.8" fill="none">
+    <path d="M${cx - RX + 26} ${cy - 46} L${cx - RX + 74} ${cy - 28}"/>
+    <path d="M${cx + RX - 26} ${cy - 46} L${cx + RX - 74} ${cy - 28}"/>
+    <path d="M${cx - RX + 26} ${cy + 46} L${cx - RX + 74} ${cy + 28}"/>
+    <path d="M${cx + RX - 26} ${cy + 46} L${cx + RX - 74} ${cy + 28}"/>
   </g>
-  <text x="${cx - 156}" y="${cy + 86}" class="s" text-anchor="end">切线喷嘴（切线方向喷射）</text>
-  <text x="${cx + 176}" y="${cy - 52}" class="s">多喷嘴，无传动部件</text>
-  <!-- 自分级：内圈细粉从中心出 -->
-  <path d="M${cx}" y1="${cy}" x2="${cx}" y2="${cy - 66}" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 20}" y="${cy - 74}" class="s">细粉从中心引出</text>
-  <text x="${cx}" y="${cy + 112}" class="s" text-anchor="middle">物料沿壁面切向撞击摩擦而粉碎</text>`;
+  <text x="${cx - RX - 12}" y="${cy + 78}" class="s" text-anchor="end">切线喷嘴：高压气流沿壁面切向喷入</text>
+
+  <!-- 细粉从中心向上引出 -->
+  <path d="M${cx} ${cy - 17} V${cy - RY - 26}" stroke="${C.ok}" stroke-width="1.7"
+        fill="none" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 12}" y="${cy - RY - 34}" class="s">细粉从中心引出</text>
+
+  <!-- 结构说明 -->
+  <text x="${cx + RX + 14}" y="${cy - 62}" class="h">无传动部件</text>
+  <text x="${cx + RX + 14}" y="${cy - 44}" class="s">自分级结构</text>
+  <text x="${cx + RX + 14}" y="${cy - 22}" class="s">无死角、无存料风险</text>
+  <text x="${cx + RX + 14}" y="${cy}" class="s">清洁与防爆验证最容易</text>
+
+  <text x="${cx}" y="${cy + RY + 56}" class="s" text-anchor="middle">物料沿壁面切向撞击、摩擦而粉碎，更适于团聚体打散还原</text>`;
 }
 
 /* ============ 蒸汽动能磨 ============ */
