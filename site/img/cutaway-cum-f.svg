@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+
+  <defs>
+    <pattern id="tex-cum-f" patternUnits="userSpaceOnUse" width="880" height="705">
+      <image href="tex-steel.jpg" width="880" height="705" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <linearGradient id="steel-cum-f" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ECEDEA"/>
+      <stop offset=".18" stop-color="#F7F8F5"/>
+      <stop offset=".55" stop-color="#EEEFF0"/>
+      <stop offset="1" stop-color="#DDDFE1"/>
+    </linearGradient>
+    <marker id="ar-cum-f" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#15171A" stroke-width="1.1"/>
+    </marker>
+    <marker id="arb-cum-f" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1A4FA0" stroke-width="1.1"/>
+    </marker>
+    <marker id="arg-cum-f" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1F6B43" stroke-width="1.1"/>
+    </marker>
+  </defs>
+<style>
+  .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
+  .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
+</style>
+<rect width="720" height="460" fill="#FBFBF9"/>
+<g>
+  <g>
+     <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="url(#steel-cum-f)" stroke="none"/>
+     <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-f)" opacity=".14" stroke="none"/>
+     <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+   </g>
+  <!-- 转子 + 锤片 -->
+  <circle cx="330" cy="200" r="14" fill="url(#steel-cum-f)" stroke="#15171A" stroke-width="1.6"/>
+  <line x1="344.0" y1="200.0"
+                  x2="374.0" y2="200.0" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="369.0" y="195.0" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/><line x1="337.0" y1="212.1"
+                  x2="352.0" y2="238.1" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="347.0" y="233.1" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/><line x1="323.0" y1="212.1"
+                  x2="308.0" y2="238.1" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="303.0" y="233.1" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/><line x1="316.0" y1="200.0"
+                  x2="286.0" y2="200.0" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="281.0" y="195.0" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/><line x1="323.0" y1="187.9"
+                  x2="308.0" y2="161.9" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="303.0" y="156.9" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/><line x1="337.0" y1="187.9"
+                  x2="352.0" y2="161.9" stroke="#15171A" stroke-width="1.3"/>
+            <rect x="347.0" y="156.9" width="10" height="10"
+                  fill="#B0470E" opacity=".85"/>
+  <text x="330" y="128" class="h" text-anchor="middle">转子锤片</text>
+  <!-- 筛网（弧形，包住下半圈） -->
+  <path d="M238 200 a92 92 0 0 0 184 0" fill="none" stroke="#8B9098" stroke-width="2.2"
+        stroke-dasharray="2 5"/>
+  <text x="330" y="306" class="s" text-anchor="middle">筛网孔径决定出料粒径</text>
+  <line x1="330" y1="96" x2="330" y2="140" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-cum-f)"/>
+  <text x="330" y="88" class="s" text-anchor="middle">进料</text>
+  <path d="M234 268 H150" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-cum-f)"/>
+  <text x="150" y="286" class="s">出料（穿过筛网）</text></g>
+</svg>

@@ -1,6 +1,8 @@
 /* ALPA 粉体选型知识库 · 前端（原生 JS，无依赖）
    一个 kb.json 即全库。页面通过 data-view 决定渲染哪个视图。 */
 const KB = { data: null, idx: [] };
+// 已有独立剖面图的机型（其余机型不显示图，避免共用同一张）
+const CUTAWAY = new Set(['mqw','mql','mqp','steam-jet','csm','cum-p','cum-f','rtm','mz','classifier']);
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -287,53 +289,10 @@ function viewProduct() {
 
     <h2>原理</h2>
     <p>${esc(p.principle)}</p>
-    <figure class="figure flow">
-      <svg viewBox="0 0 720 250" role="img" aria-label="设备工作流程示意：物料进入粉碎区被粉碎，上升气流带到分级区，细粉穿过分级轮被收集，粗粉回落继续粉碎">
-        <!-- 主腔体 -->
-        <path d="M150 60 h300 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z"
-              fill="none" stroke="var(--ink)" stroke-width="1.4"/>
-        <!-- 分级区 -->
-        <line x1="150" y1="118" x2="450" y2="118" stroke="var(--rule)" stroke-width="1" stroke-dasharray="4 4"/>
-        <!-- 分级轮 -->
-        <g transform="translate(300 118)">
-          <circle r="26" fill="none" stroke="var(--link)" stroke-width="1.4"/>
-          <circle r="9" fill="none" stroke="var(--link)" stroke-width="1.2"/>
-          <line x1="-26" y1="0" x2="26" y2="0" stroke="var(--link)" stroke-width="1"/>
-          <line x1="0" y1="-26" x2="0" y2="26" stroke="var(--link)" stroke-width="1"/>
-          <line x1="-18.4" y1="-18.4" x2="18.4" y2="18.4" stroke="var(--link)" stroke-width="1"/>
-          <line x1="18.4" y1="-18.4" x2="-18.4" y2="18.4" stroke="var(--link)" stroke-width="1"/>
-        </g>
-        <!-- 喷嘴 -->
-        <g stroke="var(--mark)" stroke-width="1.4" fill="none">
-          <path d="M196 160 l22 -14"/><path d="M276 160 l22 -14"/><path d="M356 160 l22 -14"/>
-        </g>
-        <text x="205" y="185" class="fg-s" text-anchor="middle">喷嘴</text>
-        <!-- 气流上升 -->
-        <g stroke="var(--rule)" stroke-width="1" fill="none">
-          <path d="M200 150 v-22" marker-end="url(#ar)"/><path d="M300 150 v-22" marker-end="url(#ar)"/><path d="M400 150 v-22" marker-end="url(#ar)"/>
-        </g>
-        <!-- 细粉出口 -->
-        <path d="M450 100 h70" stroke="var(--ok)" stroke-width="1.4" marker-end="url(#arg)"/>
-        <text x="470" y="90" class="fg-s">细粉 → 收集</text>
-        <!-- 粗粉回落 -->
-        <path d="M150 96 h-52 v46 h52" stroke="var(--ink-3)" stroke-width="1.2" fill="none" stroke-dasharray="5 4" marker-end="url(#arn)"/>
-        <text x="86" y="120" class="fg-s" text-anchor="middle">粗粉回落</text>
-        <!-- 进料 -->
-        <path d="M300 26 v22" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#ar)"/>
-        <text x="300" y="20" class="fg-s" text-anchor="middle">进料</text>
-        <text x="150" y="60" class="fg-s">① 粉碎区</text>
-        <text x="150" y="112" class="fg-s">② 分级区</text>
-        <text x="300" y="142" class="fg-s" text-anchor="middle">分级轮转速决定切割粒径</text>
-        <defs>
-          <marker id="ar" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--rule)" stroke-width="1.2"/></marker>
-          <marker id="arg" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--ok)" stroke-width="1.2"/></marker>
-          <marker id="arn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/></marker>
-        </defs>
-      </svg>
-      <figcaption>台账上看到的三个数字都能在这张图里找到位置：粉碎区决定产能，分级轮转速决定粒度，粗粉回落的路径决定能耗。</figcaption>
-    </figure>
-
-
+    ${CUTAWAY.has(p.id) ? `<figure class="figure cutaway">
+      <img src="img/cutaway-${p.id}.svg" alt="${esc(p.cn)} 剖面示意图，标注粉碎区、分级轮与粗细粉流向" loading="lazy">
+      <figcaption>结构图按本机型的实际工作方式绘制。动态数据（产能、线速度）以关键参数表为准。</figcaption>
+    </figure>` : ''}
     <h2>关键参数</h2>
     <div class="kv">${kv.map(([k, v]) => `<div class="r"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join('')}</div>
 

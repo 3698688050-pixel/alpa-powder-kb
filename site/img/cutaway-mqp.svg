@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+
+  <defs>
+    <pattern id="tex-mqp" patternUnits="userSpaceOnUse" width="880" height="705">
+      <image href="tex-steel.jpg" width="880" height="705" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <linearGradient id="steel-mqp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ECEDEA"/>
+      <stop offset=".18" stop-color="#F7F8F5"/>
+      <stop offset=".55" stop-color="#EEEFF0"/>
+      <stop offset="1" stop-color="#DDDFE1"/>
+    </linearGradient>
+    <marker id="ar-mqp" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#15171A" stroke-width="1.1"/>
+    </marker>
+    <marker id="arb-mqp" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1A4FA0" stroke-width="1.1"/>
+    </marker>
+    <marker id="arg-mqp" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1F6B43" stroke-width="1.1"/>
+    </marker>
+  </defs>
+<style>
+  .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
+  .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
+</style>
+<rect width="720" height="460" fill="#FBFBF9"/>
+<g>
+  <!-- 扁圆盘腔：横躺的圆盘 + 切线喷嘴 -->
+  <g>
+     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#steel-mqp)" stroke="none"/>
+     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#tex-mqp)" opacity=".14" stroke="none"/>
+     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+   </g>
+  <ellipse cx="330" cy="200" rx="96" ry="48" fill="none" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 中心进料喷射器 -->
+  <circle cx="330" cy="200" r="15" fill="url(#steel-mqp)" stroke="#15171A" stroke-width="1.4"/>
+  <line x1="330" y1="100" x2="330" y2="134" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-mqp)"/>
+  <text x="330" y="92" class="s" text-anchor="middle">加料喷射器</text>
+  <!-- 切线喷嘴：沿圆周切向喷射 -->
+  <g stroke="#B0470E" stroke-width="1.6" fill="none">
+    <path d="M162 156 L204 170"/>
+    <path d="M498 156 L456 170"/>
+    <path d="M162 244 L204 230"/>
+    <path d="M498 244 L456 230"/>
+  </g>
+  <text x="154" y="148" class="s" text-anchor="end">切线喷嘴</text>
+  <text x="506" y="148" class="s">多喷嘴，无传动部件</text>
+  <!-- 自分级：内圈细粉从中心出 -->
+  <path d="M330" y1="200" x2="330" y2="134" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqp)"/>
+  <text x="350" y="126" class="s">细粉从中心引出</text>
+  <text x="200" y="296" class="s">物料沿壁面切向撞击摩擦而粉碎</text></g>
+</svg>

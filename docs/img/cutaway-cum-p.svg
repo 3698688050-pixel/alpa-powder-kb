@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+
+  <defs>
+    <pattern id="tex-cum-p" patternUnits="userSpaceOnUse" width="880" height="705">
+      <image href="tex-steel.jpg" width="880" height="705" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <linearGradient id="steel-cum-p" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ECEDEA"/>
+      <stop offset=".18" stop-color="#F7F8F5"/>
+      <stop offset=".55" stop-color="#EEEFF0"/>
+      <stop offset="1" stop-color="#DDDFE1"/>
+    </linearGradient>
+    <marker id="ar-cum-p" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#15171A" stroke-width="1.1"/>
+    </marker>
+    <marker id="arb-cum-p" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1A4FA0" stroke-width="1.1"/>
+    </marker>
+    <marker id="arg-cum-p" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1F6B43" stroke-width="1.1"/>
+    </marker>
+  </defs>
+<style>
+  .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
+  .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
+</style>
+<rect width="720" height="460" fill="#FBFBF9"/>
+<g>
+  <g>
+     <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="url(#steel-cum-p)" stroke="none"/>
+     <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-p)" opacity=".14" stroke="none"/>
+     <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+   </g>
+  <!-- 左固定盘 + 右转动盘，棒销相间 -->
+  <line x1="310" y1="138" x2="310" y2="262" stroke="#15171A" stroke-width="1.6"/>
+  <line x1="360" y1="138" x2="360" y2="262" stroke="#15171A" stroke-width="1.6"/>
+  <rect x="296" y="158" width="26" height="9" fill="#B0470E" opacity=".85"/>
+            <rect x="362" y="171" width="26" height="9" fill="#B0470E" opacity=".85"/><rect x="296" y="184" width="26" height="9" fill="#B0470E" opacity=".85"/>
+            <rect x="362" y="197" width="26" height="9" fill="#B0470E" opacity=".85"/><rect x="296" y="210" width="26" height="9" fill="#B0470E" opacity=".85"/>
+            <rect x="362" y="223" width="26" height="9" fill="#B0470E" opacity=".85"/><rect x="296" y="236" width="26" height="9" fill="#B0470E" opacity=".85"/>
+            <rect x="362" y="249" width="26" height="9" fill="#B0470E" opacity=".85"/>
+  <line x1="386" y1="200" x2="426" y2="200" stroke="#15171A" stroke-width="1.6"/>
+  <text x="286" y="128" class="s" text-anchor="middle">静盘</text>
+  <text x="382" y="128" class="s" text-anchor="middle">动盘（棒销）</text>
+  <line x1="266" y1="330" x2="266" y2="138" stroke="#15171A" stroke-width="1.4"/>
+  <line x1="236" y1="96" x2="236" y2="138" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-cum-p)"/>
+  <text x="236" y="88" class="s" text-anchor="middle">进料（中心）</text>
+  <path d="M426 200 H596" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-cum-p)"/>
+  <text x="434" y="190" class="s">无筛网，出料流畅</text>
+  <text x="196" y="292" class="s">双动力可选，线速度 200 m/s 以上</text>
+  <text x="196" y="312" class="s">装配间隙控制 2 至 3 mm</text></g>
+</svg>

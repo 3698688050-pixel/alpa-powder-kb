@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+
+  <defs>
+    <pattern id="tex-mqw" patternUnits="userSpaceOnUse" width="880" height="705">
+      <image href="tex-steel.jpg" width="880" height="705" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <linearGradient id="steel-mqw" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ECEDEA"/>
+      <stop offset=".18" stop-color="#F7F8F5"/>
+      <stop offset=".55" stop-color="#EEEFF0"/>
+      <stop offset="1" stop-color="#DDDFE1"/>
+    </linearGradient>
+    <marker id="ar-mqw" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#15171A" stroke-width="1.1"/>
+    </marker>
+    <marker id="arb-mqw" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1A4FA0" stroke-width="1.1"/>
+    </marker>
+    <marker id="arg-mqw" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7" fill="none" stroke="#1F6B43" stroke-width="1.1"/>
+    </marker>
+  </defs>
+<style>
+  .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
+  .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
+</style>
+<rect width="720" height="460" fill="#FBFBF9"/>
+<g>
+  <!-- 腔体：上圆筒 + 下锥斗 -->
+  <g>
+     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#steel-mqw)" stroke="none"/>
+     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#tex-mqw)" opacity=".14" stroke="none"/>
+     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+   </g>
+  <g>
+     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#steel-mqw)" stroke="none"/>
+     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#tex-mqw)" opacity=".14" stroke="none"/>
+     <path d="M212 256 h256 l-74 84 h-108 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+   </g>
+  <!-- 出料口 -->
+  <rect x="296" y="340" width="68" height="26" fill="url(#steel-mqw)" stroke="#15171A" stroke-width="1.4"/>
+  <rect x="278" y="366" width="104" height="12" fill="url(#steel-mqw)" stroke="#15171A" stroke-width="1.2"/>
+  <!-- 进料口 -->
+  <rect x="304" y="58" width="52" height="38" fill="url(#steel-mqw)" stroke="#15171A" stroke-width="1.4"/>
+  <line x1="330" y1="20" x2="330" y2="58" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-mqw)"/>
+
+  <!-- 分级区虚线 -->
+  <line x1="212" y1="170" x2="456" y2="170" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 分级轮：密集细叶片（不是螺旋桨） -->
+  <g>
+    <circle cx="330" cy="170" r="44" fill="none" stroke="#1A4FA0" stroke-width="1.6"/>
+    <circle cx="330" cy="170" r="12" fill="none" stroke="#1A4FA0" stroke-width="1.4"/>
+    <line x1="342.0" y1="170.0"
+                    x2="374.0" y2="170.0"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="341.1" y1="174.6"
+                    x2="370.7" y2="186.8"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="338.5" y1="178.5"
+                    x2="361.1" y2="201.1"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="334.6" y1="181.1"
+                    x2="346.8" y2="210.7"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="330.0" y1="182.0"
+                    x2="330.0" y2="214.0"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="325.4" y1="181.1"
+                    x2="313.2" y2="210.7"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="321.5" y1="178.5"
+                    x2="298.9" y2="201.1"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="318.9" y1="174.6"
+                    x2="289.3" y2="186.8"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="318.0" y1="170.0"
+                    x2="286.0" y2="170.0"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="318.9" y1="165.4"
+                    x2="289.3" y2="153.2"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="321.5" y1="161.5"
+                    x2="298.9" y2="138.9"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="325.4" y1="158.9"
+                    x2="313.2" y2="129.3"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="330.0" y1="158.0"
+                    x2="330.0" y2="126.0"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="334.6" y1="158.9"
+                    x2="346.8" y2="129.3"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="338.5" y1="161.5"
+                    x2="361.1" y2="138.9"
+                    stroke="#1A4FA0" stroke-width="1.1"/><line x1="341.1" y1="165.4"
+                    x2="370.7" y2="153.2"
+                    stroke="#1A4FA0" stroke-width="1.1"/>
+  </g>
+
+  <!-- 底部拉瓦尔喷嘴：朝内交汇 -->
+  <g stroke="#B0470E" stroke-width="1.6" fill="none">
+    <path d="M234 316 l34 -26"/>
+    <path d="M272 322 l26 -30"/>
+    <path d="M388 322 l-26 -30"/>
+    <path d="M426 316 l-34 -26"/>
+  </g>
+  <text x="180" y="330" class="s" text-anchor="end">拉瓦尔喷嘴</text>
+
+  <!-- 交汇点 -->
+  <circle cx="330" cy="292" r="3.2" fill="#B0470E"/>
+  <text x="338" y="284" class="s">高压气流交汇，物料自撞</text>
+
+  <!-- 细粉上升 -->
+  <g stroke="#1A4FA0" stroke-width="1.2" fill="none">
+    <path d="M290 250 V214" marker-end="url(#arb-mqw)"/>
+    <path d="M330 250 V214" marker-end="url(#arb-mqw)"/>
+    <path d="M370 250 V214" marker-end="url(#arb-mqw)"/>
+  </g>
+
+  <!-- 细粉出口 -->
+  <path d="M456 170 H612" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqw)"/>
+  <text x="464" y="158" class="s">细粉 → 旋风＋除尘器</text>
+
+  <!-- 粗粉回落 -->
+  <path d="M212 216 H150 v100 H234" stroke="#8B9098" stroke-width="1.2"
+        stroke-dasharray="6 4" fill="none" marker-end="url(#ar-mqw)"/>
+  <text x="150" y="206" class="s">粗粉回落</text>
+
+  <!-- 标注 -->
+  <text x="470" y="104" class="h">分级轮</text>
+  <text x="470" y="122" class="s">转速决定切割粒径</text>
+  <text x="198" y="112" class="h" text-anchor="end">粉碎区</text>
+  <text x="198" y="130" class="s" text-anchor="end">物料自磨</text>
+  <text x="390" y="386" class="h">卸料口</text></g>
+</svg>
