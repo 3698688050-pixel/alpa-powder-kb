@@ -85,12 +85,25 @@ function header(active) {
     ['decision.html', '选型决策'], ['industry.html', '行业方案'],
     ['materials.html', '物料与目数'], ['glossary.html', '术语']
   ];
+  // 气流分级轮的几何线稿：同心圆 + 叶片，用当前色描边
+  const logo = `<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+    <circle cx="11" cy="11" r="9.2" fill="none" stroke="currentColor" stroke-width="1.1"/>
+    <circle cx="11" cy="11" r="4.2" fill="none" stroke="currentColor" stroke-width="1.1"/>
+    ${[0,45,90,135].map(a=>{
+      const r=a*Math.PI/180, x1=11+Math.cos(r)*4.2, y1=11+Math.sin(r)*4.2,
+            x2=11+Math.cos(r)*9.2, y2=11+Math.sin(r)*9.2;
+      return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="currentColor" stroke-width="1.1"/>`;
+    }).join('')}
+  </svg>`;
   return `<header class="top"><div class="top-in">
-    <a class="brand" href="index.html"><b>ALPA</b><span>粉体选型知识库</span></a>
-    <nav class="menu">${nav.map(([u, t]) =>
-      `<a href="${u}" class="${u === active ? 'on' : ''}">${t}</a>`).join('')}</nav>
+    <a class="brand" href="index.html" aria-label="ALPA 粉体选型知识库首页">${logo}<b>ALPA</b><span>粉体选型知识库</span></a>
+    <nav class="menu" aria-label="主导航">${nav.map(([u, t], i) =>
+      `<a href="${u}" class="${u === active ? 'on' : ''}${i > 2 ? ' more' : ''}">${t}</a>`).join('')}
+      <details class="moremenu"><summary aria-label="更多导航">更多</summary>
+        <div>${nav.slice(3).map(([u, t]) => `<a href="${u}">${t}</a>`).join('')}</div>
+      </details></nav>
     <div class="searchbox">
-      <input id="q" placeholder="搜产品 / 物料 / 问题" autocomplete="off">
+      <input id="q" placeholder="搜索" aria-label="搜索产品、物料与问题" autocomplete="off">
       <div id="hits"></div>
     </div>
   </div></header>`;
@@ -112,6 +125,72 @@ function viewIndex() {
       <div><b>${d.materials.length}</b><small>物料密度、硬度与易磨性</small></div>
       <div><b>${d.decision.quick_answers.length}</b><small>客户问出口就能答的速答</small></div>
     </div>
+
+    <h2>粒度决定路线</h2>
+    <p>把客户的目标粒度放到这条轴上，路线就出来了。左边粗、右边细，四段之间不是渐变而是断档，因为断档处正是成本跃升的地方。</p>
+    <figure class="figure">
+      <svg viewBox="0 0 720 210" role="img" aria-label="粒度路线示意：20 到 300 目用机械粉碎，100 到 1500 目用空气分级磨，325 到 5000 目用气流粉碎，更细用蒸汽动能磨">
+        <defs>
+          <linearGradient id="gA" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#B0470E" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#B0470E" stop-opacity=".34"/>
+          </linearGradient>
+          <linearGradient id="gB" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8A6A2E" stop-opacity=".20"/>
+            <stop offset="1" stop-color="#8A6A2E" stop-opacity=".38"/>
+          </linearGradient>
+          <linearGradient id="gC" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1A4FA0" stop-opacity=".16"/>
+            <stop offset="1" stop-color="#1A4FA0" stop-opacity=".32"/>
+          </linearGradient>
+          <linearGradient id="gD" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#15171A" stop-opacity=".10"/>
+            <stop offset="1" stop-color="#15171A" stop-opacity=".26"/>
+          </linearGradient>
+        </defs>
+
+        <!-- 四段色带 -->
+        <rect x="20"  y="46" width="150" height="34" fill="url(#gA)"/>
+        <rect x="178" y="46" width="150" height="34" fill="url(#gB)"/>
+        <rect x="336" y="46" width="170" height="34" fill="url(#gC)"/>
+        <rect x="514" y="46" width="150" height="34" fill="url(#gD)"/>
+
+        <!-- 段标签 -->
+        <text x="20"  y="36" class="fg-h">20 至 300 目</text>
+        <text x="178" y="36" class="fg-h">100 至 1500 目</text>
+        <text x="336" y="36" class="fg-h">325 至 5000 目</text>
+        <text x="514" y="36" class="fg-h">更细，亚微米</text>
+
+        <text x="20"  y="100" class="fg-b">针盘磨 / 锤式磨</text>
+        <text x="178" y="100" class="fg-b">空气分级磨</text>
+        <text x="336" y="100" class="fg-b">气流粉碎</text>
+        <text x="514" y="100" class="fg-b">蒸汽动能磨</text>
+
+        <text x="20"  y="120" class="fg-s">约 850 至 53 μm</text>
+        <text x="178" y="120" class="fg-s">约 150 至 10 μm</text>
+        <text x="336" y="120" class="fg-s">约 45 至 3 μm</text>
+        <text x="514" y="120" class="fg-s">0.5 至 1 μm</text>
+
+        <!-- 刻度轴 -->
+        <line x1="20" y1="152" x2="664" y2="152" class="axis"/>
+        <g class="tick">
+          <line x1="20" y1="152" x2="20" y2="158"/><text x="20" y="176" text-anchor="middle">850 μm</text>
+          <line x1="118" y1="152" x2="118" y2="158"/><text x="118" y="176" text-anchor="middle">150</text>
+          <line x1="216" y1="152" x2="216" y2="158"/><text x="216" y="176" text-anchor="middle">53</text>
+          <line x1="314" y1="152" x2="314" y2="158"/><text x="314" y="176" text-anchor="middle">45</text>
+          <line x1="412" y1="152" x2="412" y2="158"/><text x="412" y="176" text-anchor="middle">10</text>
+          <line x1="510" y1="152" x2="510" y2="158"/><text x="510" y="176" text-anchor="middle">3</text>
+          <line x1="608" y1="152" x2="608" y2="158"/><text x="608" y="176" text-anchor="middle">0.5</text>
+        </g>
+        <text x="664" y="176" class="fg-s" text-anchor="end">μm</text>
+
+        <!-- 能耗提示 -->
+        <text x="20" y="200" class="fg-s">能耗基准 1×</text>
+        <text x="336" y="200" class="fg-s">气流粉碎能耗约为机械粉碎的 2 至 3 倍</text>
+        <text x="664" y="200" class="fg-s" text-anchor="end">最细</text>
+      </svg>
+      <figcaption>段与段之间的空白是真实的断档：机械磨做不到 10μm 以下稳定量产，气流磨做不到 45μm 以上还比机械磨便宜。</figcaption>
+    </figure>
 
     <h2>产品谱系</h2>
     <p>所有设备只回答两个问题：把料<b>磨细</b>，还是把粉<b>切段</b>。磨细又分靠气流自撞与靠转子打；切段只有分级机一类。</p>
@@ -203,6 +282,52 @@ function viewProduct() {
 
     <h2>原理</h2>
     <p>${esc(p.principle)}</p>
+    <figure class="figure flow">
+      <svg viewBox="0 0 720 250" role="img" aria-label="设备工作流程示意：物料进入粉碎区被粉碎，上升气流带到分级区，细粉穿过分级轮被收集，粗粉回落继续粉碎">
+        <!-- 主腔体 -->
+        <path d="M150 60 h300 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z"
+              fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <!-- 分级区 -->
+        <line x1="150" y1="118" x2="450" y2="118" stroke="var(--rule)" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- 分级轮 -->
+        <g transform="translate(300 118)">
+          <circle r="26" fill="none" stroke="var(--link)" stroke-width="1.4"/>
+          <circle r="9" fill="none" stroke="var(--link)" stroke-width="1.2"/>
+          <line x1="-26" y1="0" x2="26" y2="0" stroke="var(--link)" stroke-width="1"/>
+          <line x1="0" y1="-26" x2="0" y2="26" stroke="var(--link)" stroke-width="1"/>
+          <line x1="-18.4" y1="-18.4" x2="18.4" y2="18.4" stroke="var(--link)" stroke-width="1"/>
+          <line x1="18.4" y1="-18.4" x2="-18.4" y2="18.4" stroke="var(--link)" stroke-width="1"/>
+        </g>
+        <!-- 喷嘴 -->
+        <g stroke="var(--mark)" stroke-width="1.4" fill="none">
+          <path d="M196 160 l22 -14"/><path d="M276 160 l22 -14"/><path d="M356 160 l22 -14"/>
+        </g>
+        <text x="205" y="185" class="fg-s" text-anchor="middle">喷嘴</text>
+        <!-- 气流上升 -->
+        <g stroke="var(--rule)" stroke-width="1" fill="none">
+          <path d="M200 150 v-22" marker-end="url(#ar)"/><path d="M300 150 v-22" marker-end="url(#ar)"/><path d="M400 150 v-22" marker-end="url(#ar)"/>
+        </g>
+        <!-- 细粉出口 -->
+        <path d="M450 100 h70" stroke="var(--ok)" stroke-width="1.4" marker-end="url(#arg)"/>
+        <text x="470" y="90" class="fg-s">细粉 → 收集</text>
+        <!-- 粗粉回落 -->
+        <path d="M150 96 h-52 v46 h52" stroke="var(--ink-3)" stroke-width="1.2" fill="none" stroke-dasharray="5 4" marker-end="url(#arn)"/>
+        <text x="86" y="120" class="fg-s" text-anchor="middle">粗粉回落</text>
+        <!-- 进料 -->
+        <path d="M300 26 v22" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#ar)"/>
+        <text x="300" y="20" class="fg-s" text-anchor="middle">进料</text>
+        <text x="150" y="60" class="fg-s">① 粉碎区</text>
+        <text x="150" y="112" class="fg-s">② 分级区</text>
+        <text x="300" y="142" class="fg-s" text-anchor="middle">分级轮转速决定切割粒径</text>
+        <defs>
+          <marker id="ar" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--rule)" stroke-width="1.2"/></marker>
+          <marker id="arg" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--ok)" stroke-width="1.2"/></marker>
+          <marker id="arn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/></marker>
+        </defs>
+      </svg>
+      <figcaption>台账上看到的三个数字都能在这张图里找到位置：粉碎区决定产能，分级轮转速决定粒度，粗粉回落的路径决定能耗。</figcaption>
+    </figure>
+
 
     <h2>关键参数</h2>
     <div class="kv">${kv.map(([k, v]) => `<div class="r"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join('')}</div>
