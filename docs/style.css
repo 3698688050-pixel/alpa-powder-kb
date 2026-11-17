@@ -264,3 +264,25 @@ h2 + .kv{border-top:1px solid var(--ink);margin-top:10px}
   .figure{margin-left:0;margin-right:0}
   .figure svg{width:100%}
 }
+
+/* ---------- 产品谱系：分组行，不横向拖动 ---------- */
+.fam{margin:30px 0 0;border-top:1px solid var(--ink);padding-top:14px}
+.fam-h{display:flex;align-items:baseline;gap:12px}
+.fam-h b{font:600 15.5px/1.4 var(--ui);color:var(--ink)}
+.fam-h span{font:12.5px/1.4 var(--ui);color:var(--ink-3)}
+.fam-p{margin:6px 0 14px;font:13.5px/1.65 var(--ui);color:var(--ink-3);max-width:60ch}
+.fam-row{display:grid;grid-template-columns:210px 1fr 84px;gap:20px;
+  padding:14px 0;border-top:1px solid var(--rule-soft);align-items:baseline;
+  text-decoration:none;color:inherit}
+.fam-row:hover{background:var(--paper-2)}
+.fam-row:hover .fr-n{color:var(--link)}
+.fr-n{font:600 15px/1.45 var(--ui);color:var(--ink)}
+.fr-n em{font-style:normal;font-weight:600;color:var(--ink-3);margin-left:7px;
+  font-family:var(--mono);font-size:12.5px}
+.fr-e{font:14px/1.65 var(--ui);color:var(--ink-2)}
+.fr-r{font:12.5px/1.5 var(--mono);color:var(--ink-3);text-align:right;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:720px){
+  .fam-row{grid-template-columns:1fr;gap:4px;padding:15px 0}
+  .fr-r{text-align:left;font-size:12px}
+}

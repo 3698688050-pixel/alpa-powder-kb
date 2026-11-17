@@ -193,20 +193,25 @@ function viewIndex() {
     </figure>
 
     <h2>产品谱系</h2>
-    <p>所有设备只回答两个问题：把料<b>磨细</b>，还是把粉<b>切段</b>。磨细又分靠气流自撞与靠转子打；切段只有分级机一类。</p>
-    <div class="tw"><table>
-      <thead><tr><th>族</th><th>系列</th><th>粒度 D50</th><th>产能</th><th>定位</th></tr></thead>
-      <tbody>${d.families.map(f => {
-        const ps = d.products.filter(p => p.family === f.id);
-        return ps.map((p, i) => `<tr>
-          ${i === 0 ? `<td rowspan="${ps.length}"><b>${esc(f.cn)}</b><br><span class="sub">${ps.length} 个系列</span></td>` : ''}
-          <td><a href="product.html?id=${p.id}">${esc(p.cn)}</a><br><span class="sub">${esc(p.cname)}</span></td>
-          <td class="num">${p.size_range ? p.size_range.d50_min + '~' + p.size_range.d50_max : '—'} μm</td>
-          <td class="num">${p.capacity_tph ? p.capacity_tph + ' t/h' : '—'}</td>
-          <td>${esc((f.positioning || '').slice(0, 40))}${i === 0 ? '…' : ''}</td>
-        </tr>`).join('');
-      }).join('')}</tbody>
-    </table></div>
+    <p>所有设备只回答两个问题：把料<b>磨细</b>，还是把粉<b>切段</b>。每一行写的是<b>这台设备在同族里只有它能做到的事</b>，
+    不是说给整个族的通用话。</p>
+    ${d.families.filter(f => d.products.some(p => p.family === f.id)).map(f => {
+      const ps = d.products.filter(p => p.family === f.id);
+      return `<div class="fam">
+        <div class="fam-h"><b>${esc(f.cn)}</b><span>${ps.length} 个系列</span></div>
+        <p class="fam-p">${esc(f.positioning)}</p>
+        ${ps.map(p => {
+          const m = p.cn.match(/^([A-Za-z][A-Za-z0-9\/\-]*)\s*(.*)$/);
+          const code = m ? m[1] : '';
+          const name = m ? m[2] : p.cn;
+          return `<a class="fam-row" href="product.html?id=${p.id}">
+          <span class="fr-n">${code ? `<em>${esc(code)}</em> ` : ''}${esc(name)}</span>
+          <span class="fr-e">${esc(p.edge || '')}</span>
+          <span class="fr-r">${p.size_range ? p.size_range.d50_min + '–' + p.size_range.d50_max + ' μm' : '按需'}</span>
+        </a>`;
+        }).join('')}
+      </div>`;
+    }).join('')}
 
     <h2>怎么用这个库</h2>
     <div class="track">
