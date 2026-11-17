@@ -29,7 +29,7 @@
   <!-- 扁圆盘腔：横躺的圆盘 + 切线喷嘴 -->
   <g>
      <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#steel-mqp)" stroke="none"/>
-     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#tex-mqp)" opacity=".14" stroke="none"/>
+     <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="url(#tex-mqp)" opacity=".32" stroke="none"/>
      <path d="M200 134 a130 66 0 1 1 0 132 a130 66 0 1 1 0 -132 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <ellipse cx="330" cy="200" rx="96" ry="48" fill="none" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>

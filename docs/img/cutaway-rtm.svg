@@ -28,7 +28,7 @@
 <g>
   <g>
      <path d="M228 120 h224 a14 14 0 0 1 14 14 v128 a14 14 0 0 1 -14 14 h-224 a14 14 0 0 1 -14 -14 v-128 a14 14 0 0 1 14 -14 z" fill="url(#steel-rtm)" stroke="none"/>
-     <path d="M228 120 h224 a14 14 0 0 1 14 14 v128 a14 14 0 0 1 -14 14 h-224 a14 14 0 0 1 -14 -14 v-128 a14 14 0 0 1 14 -14 z" fill="url(#tex-rtm)" opacity=".14" stroke="none"/>
+     <path d="M228 120 h224 a14 14 0 0 1 14 14 v128 a14 14 0 0 1 -14 14 h-224 a14 14 0 0 1 -14 -14 v-128 a14 14 0 0 1 14 -14 z" fill="url(#tex-rtm)" opacity=".32" stroke="none"/>
      <path d="M228 120 h224 a14 14 0 0 1 14 14 v128 a14 14 0 0 1 -14 14 h-224 a14 14 0 0 1 -14 -14 v-128 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <!-- 多层涡流刀头 -->

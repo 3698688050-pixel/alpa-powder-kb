@@ -29,12 +29,12 @@
   <!-- 腔体：上圆筒 + 下锥斗 -->
   <g>
      <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#steel-mqw)" stroke="none"/>
-     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#tex-mqw)" opacity=".14" stroke="none"/>
+     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#tex-mqw)" opacity=".32" stroke="none"/>
      <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <g>
      <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#steel-mqw)" stroke="none"/>
-     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#tex-mqw)" opacity=".14" stroke="none"/>
+     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#tex-mqw)" opacity=".32" stroke="none"/>
      <path d="M212 256 h256 l-74 84 h-108 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <!-- 出料口 -->
@@ -44,6 +44,9 @@
   <rect x="304" y="58" width="52" height="38" fill="url(#steel-mqw)" stroke="#15171A" stroke-width="1.4"/>
   <line x1="330" y1="20" x2="330" y2="58" stroke="#15171A" stroke-width="1.4" marker-end="url(#ar-mqw)"/>
 
+  <!-- 法兰与内壁 -->
+  <line x1="202" y1="106" x2="458" y2="106" stroke="#8B9098" stroke-width="1.2"/>
+  <line x1="202" y1="256" x2="458" y2="256" stroke="#8B9098" stroke-width="1.2"/>
   <!-- 分级区虚线 -->
   <line x1="212" y1="170" x2="456" y2="170" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>
 
@@ -97,7 +100,7 @@
 
   <!-- 交汇点 -->
   <circle cx="330" cy="292" r="3.2" fill="#B0470E"/>
-  <text x="338" y="284" class="s">高压气流交汇，物料自撞</text>
+  <text x="480" y="300" class="s">高压气流交汇处物料自撞</text>
 
   <!-- 细粉上升 -->
   <g stroke="#1A4FA0" stroke-width="1.2" fill="none">
@@ -107,8 +110,8 @@
   </g>
 
   <!-- 细粉出口 -->
-  <path d="M456 170 H612" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqw)"/>
-  <text x="464" y="158" class="s">细粉 → 旋风＋除尘器</text>
+  <path d="M458 186 H600" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-mqw)"/>
+  <text x="466" y="204" class="s">细粉 → 旋风＋除尘器</text>
 
   <!-- 粗粉回落 -->
   <path d="M212 216 H150 v100 H234" stroke="#8B9098" stroke-width="1.2"
@@ -116,8 +119,9 @@
   <text x="150" y="206" class="s">粗粉回落</text>
 
   <!-- 标注 -->
-  <text x="470" y="104" class="h">分级轮</text>
-  <text x="470" y="122" class="s">转速决定切割粒径</text>
+  <text x="468" y="104" class="h">分级轮</text>
+  <text x="468" y="122" class="s">转速决定切割粒径</text>
+
   <text x="198" y="112" class="h" text-anchor="end">粉碎区</text>
   <text x="198" y="130" class="s" text-anchor="end">物料自磨</text>
   <text x="390" y="386" class="h">卸料口</text></g>

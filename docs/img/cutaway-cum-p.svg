@@ -28,7 +28,7 @@
 <g>
   <g>
      <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="url(#steel-cum-p)" stroke="none"/>
-     <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-p)" opacity=".14" stroke="none"/>
+     <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-p)" opacity=".32" stroke="none"/>
      <path d="M196 138 h268 a14 14 0 0 1 14 14 v96 a14 14 0 0 1 -14 14 h-268 a14 14 0 0 1 -14 -14 v-96 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <!-- 左固定盘 + 右转动盘，棒销相间 -->

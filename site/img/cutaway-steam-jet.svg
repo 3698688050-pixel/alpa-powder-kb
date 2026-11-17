@@ -28,12 +28,12 @@
 <g>
   <g>
      <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="url(#steel-steam-jet)" stroke="none"/>
-     <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="url(#tex-steam-jet)" opacity=".14" stroke="none"/>
+     <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="url(#tex-steam-jet)" opacity=".32" stroke="none"/>
      <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <g>
      <path d="M214 256 h252 l-72 82 h-108 z" fill="url(#steel-steam-jet)" stroke="none"/>
-     <path d="M214 256 h252 l-72 82 h-108 z" fill="url(#tex-steam-jet)" opacity=".14" stroke="none"/>
+     <path d="M214 256 h252 l-72 82 h-108 z" fill="url(#tex-steam-jet)" opacity=".32" stroke="none"/>
      <path d="M214 256 h252 l-72 82 h-108 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <rect x="298" y="338" width="64" height="24" fill="url(#steel-steam-jet)" stroke="#15171A" stroke-width="1.4"/>

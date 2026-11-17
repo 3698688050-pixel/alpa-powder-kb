@@ -28,12 +28,12 @@
 <g>
   <g>
      <path d="M204 96 h192 a10 10 0 0 1 10 10 v170 h-212 v-170 a10 10 0 0 1 10 -10 z" fill="url(#steel-classifier)" stroke="none"/>
-     <path d="M204 96 h192 a10 10 0 0 1 10 10 v170 h-212 v-170 a10 10 0 0 1 10 -10 z" fill="url(#tex-classifier)" opacity=".14" stroke="none"/>
+     <path d="M204 96 h192 a10 10 0 0 1 10 10 v170 h-212 v-170 a10 10 0 0 1 10 -10 z" fill="url(#tex-classifier)" opacity=".32" stroke="none"/>
      <path d="M204 96 h192 a10 10 0 0 1 10 10 v170 h-212 v-170 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <g>
      <path d="M204 276 h212 l-56 76 h-100 z" fill="url(#steel-classifier)" stroke="none"/>
-     <path d="M204 276 h212 l-56 76 h-100 z" fill="url(#tex-classifier)" opacity=".14" stroke="none"/>
+     <path d="M204 276 h212 l-56 76 h-100 z" fill="url(#tex-classifier)" opacity=".32" stroke="none"/>
      <path d="M204 276 h212 l-56 76 h-100 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <rect x="272" y="352" width="56" height="26" fill="url(#steel-classifier)" stroke="#15171A" stroke-width="1.4"/>

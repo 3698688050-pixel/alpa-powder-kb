@@ -28,7 +28,7 @@
 <g>
   <g>
      <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="url(#steel-cum-f)" stroke="none"/>
-     <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-f)" opacity=".14" stroke="none"/>
+     <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="url(#tex-cum-f)" opacity=".32" stroke="none"/>
      <path d="M206 140 h240 a14 14 0 0 1 14 14 v92 a14 14 0 0 1 -14 14 h-240 a14 14 0 0 1 -14 -14 v-92 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <!-- 转子 + 锤片 -->

@@ -43,7 +43,7 @@ const defs = (id) => `
 const shell = (id, d, extra = '') =>
   `<g>
      <path d="${d}" fill="url(#steel-${id})" stroke="none"/>
-     <path d="${d}" fill="url(#tex-${id})" opacity=".14" stroke="none"/>
+     <path d="${d}" fill="url(#tex-${id})" opacity=".32" stroke="none"/>
      <path d="${d}" fill="none" stroke="${C.ink}" stroke-width="1.6" ${extra}/>
    </g>`;
 
@@ -61,6 +61,9 @@ function mqw(id) {
   <rect x="${cx - 26}" y="58" width="52" height="38" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <line x1="${cx}" y1="20" x2="${cx}" y2="58" stroke="${C.ink}" stroke-width="1.4" marker-end="url(#ar-${id})"/>
 
+  <!-- 法兰与内壁 -->
+  <line x1="${cx - 128}" y1="106" x2="${cx + 128}" y2="106" stroke="${C.line}" stroke-width="1.2"/>
+  <line x1="${cx - 128}" y1="256" x2="${cx + 128}" y2="256" stroke="${C.line}" stroke-width="1.2"/>
   <!-- 分级区虚线 -->
   <line x1="${cx - 118}" y1="170" x2="${cx + 126}" y2="170" stroke="${C.soft}" stroke-width="1" stroke-dasharray="5 4"/>
 
@@ -87,7 +90,7 @@ function mqw(id) {
 
   <!-- 交汇点 -->
   <circle cx="${cx}" cy="292" r="3.2" fill="${C.accent}"/>
-  <text x="${cx + 8}" y="284" class="s">高压气流交汇，物料自撞</text>
+  <text x="${cx + 150}" y="300" class="s">高压气流交汇处物料自撞</text>
 
   <!-- 细粉上升 -->
   <g stroke="${C.blue}" stroke-width="1.2" fill="none">
@@ -97,8 +100,8 @@ function mqw(id) {
   </g>
 
   <!-- 细粉出口 -->
-  <path d="M${cx + 126} 170 H612" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
-  <text x="${cx + 134}" y="158" class="s">细粉 → 旋风＋除尘器</text>
+  <path d="M${cx + 128} 186 H600" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
+  <text x="${cx + 136}" y="204" class="s">细粉 → 旋风＋除尘器</text>
 
   <!-- 粗粉回落 -->
   <path d="M${cx - 118} 216 H150 v100 H${cx - 96}" stroke="${C.line}" stroke-width="1.2"
@@ -106,8 +109,9 @@ function mqw(id) {
   <text x="150" y="206" class="s">粗粉回落</text>
 
   <!-- 标注 -->
-  <text x="${cx + 140}" y="104" class="h">分级轮</text>
-  <text x="${cx + 140}" y="122" class="s">转速决定切割粒径</text>
+  <text x="${cx + 138}" y="104" class="h">分级轮</text>
+  <text x="${cx + 138}" y="122" class="s">转速决定切割粒径</text>
+
   <text x="${cx - 132}" y="112" class="h" text-anchor="end">粉碎区</text>
   <text x="${cx - 132}" y="130" class="s" text-anchor="end">物料自磨</text>
   <text x="${cx + 60}" y="386" class="h">卸料口</text>`;

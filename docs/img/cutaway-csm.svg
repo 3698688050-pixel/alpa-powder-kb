@@ -29,7 +29,7 @@
   <!-- 横置圆筒：左粉碎室 + 右分级室 -->
   <g>
      <path d="M170 132 h300 a14 14 0 0 1 14 14 v108 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-108 a14 14 0 0 1 14 -14 z" fill="url(#steel-csm)" stroke="none"/>
-     <path d="M170 132 h300 a14 14 0 0 1 14 14 v108 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-108 a14 14 0 0 1 14 -14 z" fill="url(#tex-csm)" opacity=".14" stroke="none"/>
+     <path d="M170 132 h300 a14 14 0 0 1 14 14 v108 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-108 a14 14 0 0 1 14 -14 z" fill="url(#tex-csm)" opacity=".32" stroke="none"/>
      <path d="M170 132 h300 a14 14 0 0 1 14 14 v108 a14 14 0 0 1 -14 14 h-300 a14 14 0 0 1 -14 -14 v-108 a14 14 0 0 1 14 -14 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <line x1="370" y1="132" x2="370" y2="268" stroke="#C9CCC7" stroke-width="1" stroke-dasharray="5 4"/>

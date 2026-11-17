@@ -29,7 +29,7 @@
   <!-- 磨筒 + 激振器 -->
   <g>
      <path d="M180 168 a150 42 0 0 0 300 0 a150 42 0 0 0 -300 0 z" fill="url(#steel-mz)" stroke="none"/>
-     <path d="M180 168 a150 42 0 0 0 300 0 a150 42 0 0 0 -300 0 z" fill="url(#tex-mz)" opacity=".14" stroke="none"/>
+     <path d="M180 168 a150 42 0 0 0 300 0 a150 42 0 0 0 -300 0 z" fill="url(#tex-mz)" opacity=".32" stroke="none"/>
      <path d="M180 168 a150 42 0 0 0 300 0 a150 42 0 0 0 -300 0 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <ellipse cx="330" cy="168" rx="150" ry="42" fill="none" stroke="#15171A" stroke-width="1.6"/>

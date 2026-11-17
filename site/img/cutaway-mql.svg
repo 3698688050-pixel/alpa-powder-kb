@@ -29,12 +29,12 @@
   <!-- 更高的直筒 + 平底锥斗：立式转子 -->
   <g>
      <path d="M226 84 h208 a10 10 0 0 1 10 10 v190 h-228 v-190 a10 10 0 0 1 10 -10 z" fill="url(#steel-mql)" stroke="none"/>
-     <path d="M226 84 h208 a10 10 0 0 1 10 10 v190 h-228 v-190 a10 10 0 0 1 10 -10 z" fill="url(#tex-mql)" opacity=".14" stroke="none"/>
+     <path d="M226 84 h208 a10 10 0 0 1 10 10 v190 h-228 v-190 a10 10 0 0 1 10 -10 z" fill="url(#tex-mql)" opacity=".32" stroke="none"/>
      <path d="M226 84 h208 a10 10 0 0 1 10 10 v190 h-228 v-190 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <g>
      <path d="M226 284 h228 l-64 74 h-100 z" fill="url(#steel-mql)" stroke="none"/>
-     <path d="M226 284 h228 l-64 74 h-100 z" fill="url(#tex-mql)" opacity=".14" stroke="none"/>
+     <path d="M226 284 h228 l-64 74 h-100 z" fill="url(#tex-mql)" opacity=".32" stroke="none"/>
      <path d="M226 284 h228 l-64 74 h-100 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <rect x="300" y="358" width="60" height="24" fill="url(#steel-mql)" stroke="#15171A" stroke-width="1.4"/>
