@@ -1,0 +1,178 @@
+# 行业 → 痛点 → 方案 → 机型 → 客户，全部出自手册第四章与官网 applications
+
+industries:
+  - id: battery
+    cn: 电池材料
+    en: Battery Materials
+    web: dianchicailiao
+    share: 锂电新材料市场占有率约 80%
+    pain:
+      - 材料粉碎杂质多，电池自放电容量降低
+      - 生产效率低、能耗高
+      - 水分摄入难控制，性能不良、安全性差
+      - 设备运转不稳定，产品质量参差
+      - 粉尘无法控制
+    solution:
+      - 完全陶瓷化，磁性物质摄入量 < 30PPB
+      - 闭路系统、气体循环，水分增量 < 50PPM
+      - 单机产能大型化：三元/钴酸锂/锰酸锂最高 1t/h；磷酸铁锂/碳酸锂最高 3t/h
+      - 塑烧板除尘，过滤精度 0.1μm
+      - 球形度好、堆积密度高
+      - 参数可储存、历史可查、远程监控；可选防爆，可提供验证文件
+    tech_edge:
+      - 内衬可选氧化铝/氧化锆/碳化硅/氮化硅陶瓷
+      - 陶瓷粉碎盘与分级轮最高线速度超 130m/s，多晶三元单机产能突破 1000kg/h，能耗省 50%
+      - 闭环惰性气体保护，空气含量最低值
+    products: [mqw, csm, classifier, steam-jet, coating]
+    materials:
+      cathode: [NCM, NCA, LFP, LMO, 单晶三元, LTO, LCO, 磷酸锰铁锂, 碳酸锂, 氢氧化锂]
+      anode: [人造石墨, 球形石墨, 针状焦, 石油焦, 石墨烯, 硅碳, 氧化亚硅, 碳纳米管]
+    source: manual §4.1, §3.4
+
+  - id: desulfurization
+    cn: 环保脱硫
+    en: Flue Gas Desulfurization
+    web: huanbaotuoliu
+    pain:
+      - 工业需求量大，无力脱硫处理
+      - 排污风险高，易遭处罚
+      - 自建设计复杂、设备质量难把控
+      - 工艺复杂投资大、建设周期长
+    solution:
+      - 干法工艺，可去除尾气中 95% 以上 SO2 和 99% HCl
+      - 故障率低，年运行超 8000 小时
+      - 产品粒度 D90 10~45μm 可调
+      - 大风量进风降低粉碎温度，可选冷风装置
+      - 可选在线清洁防粘堵
+    chem: "2NaHCO3 → Na2CO3 + H2O + CO2；Na2CO3 + 2HCl → 2NaCl + H2O + CO2；Na2CO3 + SO2 → Na2SO3 + CO2"
+    products: [csm, cum-p]
+    special: TSM 系列碳酸氢钠专用粉碎机（粉碎分级一体化，细粉直接进烟气管道）
+    source: manual §4.2
+
+  - id: solidwaste
+    cn: 建材固废
+    en: Construction & Solid Waste
+    web: jiancaijigufei
+    pain: [工业废料产量大无力处理, 加重污染面临处罚, 成分复杂耗时长, 侵占土地]
+    solution:
+      - 超微粉体技术＋多固废复配协同胶凝
+      - 冶金渣、钢渣、化学石膏、煤灰处理后得到稳定建材
+      - 钢渣梯级利用：超细掺合料 → 辅助胶凝材料及制品
+      - 粉煤灰梯级利用：掺合料 → 无机填料
+      - 高温渣显热回收及尾渣超微粉制备
+    tech: [高效选择性破碎, 低成本超细研磨与分级, 多固废复配协同胶凝, 功能改性, 机械造孔-静压成型, 压力可控发泡]
+    products: [steam-jet, ball-line, classifier]
+    source: manual §4.3
+
+  - id: nonmetal
+    cn: 非金属矿
+    en: Non-metallic Minerals
+    web: feijinshukuang
+    share: 非金属高端客户占有率约 90%
+    pain: [产量需求扩大传统机械无力满足, 细度不够, 包覆率不够改性效果差, 杂质多品质差]
+    three_routes:
+      - {route: 球磨分级, example: "碳酸钙 D97 10μm，单线年产 10 万吨，吨电耗 150 度", fit: 方解石/大理石/石灰石/石英/锆英砂/长石/煤矸石/白云石/菱镁石, why: 大规模低成本}
+      - {route: 蒸汽磨, example: "滑石产品粒度 1μm、片厚 300nm", fit: 滑石/石墨/云母/硅灰石/纤维水镁石/凹凸棒石/高岭土, why: 超细化又低成本}
+      - {route: 气流磨, example: "石英 2μm、金属杂质增量 <10PPM", fit: 滑石/石英/重晶石/石墨/电气石/麦饭石, why: 超纯高附加值}
+    modification: 三辊连续/涡流磨连续/针盘磨连续/高搅机间歇；改性剂加量约 0.8~1.2%，包覆率约 98%
+    products: [ball-line, steam-jet, mqw, classifier, coating, ulm-g]
+    source: manual §4.4
+
+  - id: pharma
+    cn: 医药
+    en: Pharmaceutical
+    web: yiyao
+    share: 医药市场占有率约 50%
+    pain: [化学成分复杂生产安全有隐忧, 粉尘多爆炸隐患, 噪音大, 清洗消毒有死角, 拆装不便残存物料难收集]
+    solution:
+      - 拆装方便、无死角、易清洗，收集率 99.9%
+      - 噪音 <80dB，表面粗糙度 Ra=0.4μm
+      - 支持 CIP 在线清洗、SIP 在线灭菌，参数储存与历史查询
+      - 防爆设计、全程氮气保护、隔离罩/手套箱
+      - 可提供 DQ/IQ/OQ/PQ 全套验证文件
+    range: 粒度 2mm 至 2μm；粉碎温度 -200℃ 至 200℃；规格 5g 至 1000kg
+    products: [mqp, csm, mqw, classifier, lab]
+    source: manual §4.5, FAQ 19
+
+  - id: food
+    cn: 食品/保健品/化妆品
+    en: Food, Health & Cosmetics
+    web: sphzpbjp
+    pain: [卫生安全难保证, 粉尘多爆炸隐患, 噪音大, 清洗消毒效果差, 拆装不便]
+    solution:
+      - 无死角易清洗，收集率 99.9%，陶瓷件把重金属摄入降到最低
+      - 噪音 <80dB，Ra=0.4μm，支持 CIP/SIP
+      - 糖分高、油脂高、蛋白质高、纤维强等难粉碎物料有对应方案
+    range: 粒度 2mm 至 2μm；温度 -200℃ 至 200℃；5g 至 1000kg
+    products: [csm, cum-p, mqp, mqw, lab]
+    source: manual §4.6
+
+  - id: finechem
+    cn: 精细化工
+    en: Fine Chemicals
+    web: jingxihuagong
+    pain: [环境污染恐停产, 物料有危险粉碎要求高, 需求大短时间难实现, 粒度要求高]
+    solutions_by_problem:
+      - {problem: 易燃易爆, approach: 按危险性与防爆级别采用泄爆、隔爆、抑爆等综合消防措施}
+      - {problem: 挥发性/刺激性/有毒, approach: 自动拆包机、无尘投料站、负压密闭输送、手套箱或隔离罩粉碎机}
+      - {problem: 热敏性, approach: 风冷、水冷、液氮温控}
+      - {problem: 粘性, approach: 按粘性程度选机型与工艺}
+      - {problem: 易吸潮, approach: 空气或惰性气体循环的闭环设计，控制水分摄入}
+      - {problem: 高腐蚀性, approach: PTFE/ECTFE/PE 涂覆或氧化铝/氧化锆/氮化硅/碳化硅陶瓷}
+      - {problem: 高纯度, approach: 关键零件陶瓷或碳化钨硬质合金防护}
+      - {problem: 含水量高, approach: 干燥粉碎一体化，缩短流程、降能耗}
+    products: [csm, mqp, ulm-g, coating, cum-p]
+    source: manual §4.7
+
+  - id: powder-metallurgy
+    cn: 粉末冶金
+    en: Powder Metallurgy
+    web: fenmoyejin
+    pain: [污染环境, 工艺复杂需不同粒度, 易产生杂质, 粉末多易燃爆, 水分含氧量难控制]
+    solution:
+      - 研磨制粉：气流/冲击/球磨/辊压/剪切按物料灵活组合，到微米或亚微米
+      - 颗粒分级：1μm~100μm 之间调整粒度分布，可做窄分布或正态分布
+      - 形貌设计：球形、针状、片状整形，分级输送中保持原始形貌
+      - 安全防爆：惰性气体循环保护＋自动化监测
+      - 纯度：陶瓷与碳化钨防护
+      - 水分氧含量：惰性气体循环、系统正压保护
+      - 高效收集：按粒径选过滤材料，亚微米/纳米级也能高效收集
+    products: [mqw, classifier, csm, steam-jet]
+    source: manual §4.8
+
+  - id: advanced-materials
+    cn: 高新材料
+    en: Advanced Materials
+    web: gaoxincailiao
+    pain: [污染环境, 粒度难筛选, 杂质难提升纯度, 材质复杂易磨损, 细度要求高]
+    pillars: [超细化, 超纯化, 特定功能, 安全环保]
+    detail:
+      超细化: 蒸汽动能磨、纳米湍流磨、超音速气流磨，从微米级到纳米级
+      超纯化: 氧化铝/氧化锆/氮化硅/碳化硅功能陶瓷＋碳化钨硬质合金
+      特定功能: 颗粒形貌、粒度分布、分散、造粒、活化、包覆、融合
+      安全环保: 惰性气体循环、定制化无毒害方案
+    products: [steam-jet, mqw, classifier, coating]
+    source: manual §4.9
+
+  - id: pigment
+    cn: 颜料/染料
+    en: Pigments & Dyes
+    web: yanliaoranliao
+    pain: [色差要求高不可变色, 效率低产量难达标, 流动性差易堵料, 品种多换品清洗难, 无防爆有风险, 粉尘大]
+    solution:
+      - 闭路系统全密闭循环、无废气排放
+      - 防粘防堵设计，分级精度高、粒度控制严格
+      - 塑烧板除尘 0.1μm
+      - 球形度好、堆积密度高
+      - 无死角设计，换品种清洗方便
+      - 陶瓷内衬保色保纯
+    products: [csm, mqw, coating, classifier]
+    source: manual §4.10
+
+  - id: others
+    cn: 其他材料
+    en: Other Materials
+    web: qitacailiao
+    note: 石塑制品、秸秆餐具、稻壳膳食纤维、豆粕手提袋等新兴应用
+    products: [csm, mqw, coating, ball-line]
+    source: manual §4.11

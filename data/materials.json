@@ -1,0 +1,298 @@
+[
+ {
+  "cn": "石英",
+  "en": "Quartz",
+  "density": "2.5-2.8",
+  "mohs": "7",
+  "grindability": "3",
+  "route": "jet-only"
+ },
+ {
+  "cn": "石榴石",
+  "en": "Garnet",
+  "density": "4",
+  "mohs": "7",
+  "grindability": "3",
+  "route": "jet-only"
+ },
+ {
+  "cn": "金刚砂",
+  "en": "Diamond",
+  "density": "3.5",
+  "mohs": "10",
+  "grindability": "3",
+  "route": "jet-only"
+ },
+ {
+  "cn": "金属铬",
+  "en": "Chrome metal",
+  "density": "7.19",
+  "mohs": "7-8",
+  "grindability": "3",
+  "route": "jet-only"
+ },
+ {
+  "cn": "蓝晶石",
+  "en": "Kyanite",
+  "density": "3.2-3.7",
+  "mohs": "7-7.5",
+  "grindability": "3",
+  "route": "jet-only"
+ },
+ {
+  "cn": "石墨",
+  "en": "Graphite",
+  "density": "2.1-2.2",
+  "mohs": "1",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "高岭土",
+  "en": "Kaolin",
+  "density": "2",
+  "mohs": "2",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "石膏",
+  "en": "Gypsum",
+  "density": "2.3",
+  "mohs": "1.5-2",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "重钙",
+  "en": "Heavy calcium",
+  "density": "2.6-2.8",
+  "mohs": "2-3",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "伊俐石",
+  "en": "Elysium",
+  "density": "2",
+  "mohs": "2",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "麦饭石",
+  "en": "Medical stone",
+  "density": "2-3",
+  "mohs": "2-3",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "水镁石",
+  "en": "Brucite",
+  "density": "3-3.5",
+  "mohs": "3-4",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "沸石",
+  "en": "Zeolite",
+  "density": "2.3-2.5",
+  "mohs": "3",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "粉煤灰",
+  "en": "Fly ash",
+  "density": "2",
+  "mohs": "4-5",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "方解石",
+  "en": "Calcite",
+  "density": "2.6-2.8",
+  "mohs": "2-3",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "海泡石",
+  "en": "Sepiolite",
+  "density": "2",
+  "mohs": "3",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "滑石",
+  "en": "Talc",
+  "density": "2.7-2.8",
+  "mohs": "1",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "魔芋",
+  "en": "Konjac",
+  "density": "1-2",
+  "mohs": "1-2",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "白云石",
+  "en": "Dolomite",
+  "density": "2.8-2.9",
+  "mohs": "3.5-4",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "中药材",
+  "en": "Chinese herbal medicine",
+  "density": "1-2",
+  "mohs": "1-2",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "萤石",
+  "en": "Fluorite",
+  "density": "3-3.2",
+  "mohs": "4",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "孢子",
+  "en": "Spore",
+  "density": "1-2",
+  "mohs": "1-2",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "磷灰石",
+  "en": "Apatite",
+  "density": "3.25",
+  "mohs": "5",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "珍珠岩",
+  "en": "Perlite",
+  "density": "2-3",
+  "mohs": "2-3",
+  "grindability": "1",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "可可豆",
+  "en": "Cocoa beans",
+  "density": "1-2",
+  "mohs": "1-2",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "锂盐渣",
+  "en": "Lithium salt slag",
+  "density": "3-4",
+  "mohs": "3-4",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "孔雀石",
+  "en": "Malachite",
+  "density": "3.9-4.1",
+  "mohs": "3.5-4",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "透闪石",
+  "en": "Tremolite",
+  "density": "3",
+  "mohs": "4-5",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "重晶石",
+  "en": "Barite",
+  "density": "4.3-4.7",
+  "mohs": "3-3.5",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "天青石",
+  "en": "Lapis lazuli",
+  "density": "3.9-4",
+  "mohs": "3-3.5",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "炉渣",
+  "en": "Slag",
+  "density": "2-2.5",
+  "mohs": "3-4",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "云母",
+  "en": "Mica",
+  "density": "2-3",
+  "mohs": "3",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "煤",
+  "en": "Coal",
+  "density": "1.6",
+  "mohs": "3",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "绢云母",
+  "en": "Sericite",
+  "density": "2-3",
+  "mohs": "3",
+  "grindability": "2",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "镍渣",
+  "en": "Nickel slag",
+  "density": "4-5",
+  "mohs": "5-6",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "釉料",
+  "en": "Frit",
+  "density": "3-4",
+  "mohs": "4-5",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ },
+ {
+  "cn": "金属铝",
+  "en": "Aluminium metal",
+  "density": "2.7",
+  "mohs": "5",
+  "grindability": "3",
+  "route": "mechanical+jet"
+ }
+]
