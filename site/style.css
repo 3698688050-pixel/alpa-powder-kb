@@ -286,3 +286,26 @@ h2 + .kv{border-top:1px solid var(--ink);margin-top:10px}
   .fam-row{grid-template-columns:1fr;gap:4px;padding:15px 0}
   .fr-r{text-align:left;font-size:12px}
 }
+
+/* ---------- 页面标注 ---------- */
+#inkCanvas{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:40}
+body.inking{overflow-x:clip}
+body.inking main,body.inking footer,body.inking header.top{user-select:none}
+#inkBar{position:fixed;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:80;
+  display:flex;align-items:center;gap:6px;background:var(--paper);
+  border:1px solid var(--ink);padding:6px 8px;box-shadow:0 6px 18px -10px var(--shadow-pop)}
+#inkBar button{background:none;border:0;color:var(--ink-2);font:13px/1 var(--ui);
+  padding:8px 7px;cursor:pointer;min-height:34px}
+#inkBar button:hover{color:var(--ink)}
+#inkBar #inkToggle{border:1px solid var(--rule);padding:8px 12px;color:var(--ink)}
+#inkBar #inkToggle.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#inkBar #inkTools{display:flex;align-items:center;gap:2px}
+#inkBar .ink-dot{width:26px;height:26px;min-height:26px;padding:0;border-radius:50%;
+  background:var(--c);border:1px solid var(--rule);position:relative}
+#inkBar .ink-dot.sel{outline:2px solid var(--ink);outline-offset:2px}
+#inkBar #inkUndo,#inkBar #inkClear{border-left:1px solid var(--rule);margin-left:2px}
+@media(max-width:420px){
+  #inkBar{right:8px;bottom:calc(10px + env(safe-area-inset-bottom));gap:3px;padding:5px 6px}
+  #inkBar button{padding:7px 5px;font-size:12.5px}
+  #inkBar .ink-dot{width:24px;height:24px}
+}
