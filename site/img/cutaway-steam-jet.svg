@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="860" height="470" role="img">
 
   <defs>
     <pattern id="tex-steam-jet" patternUnits="userSpaceOnUse" width="880" height="705">
@@ -24,17 +24,13 @@
   .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
   .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
 </style>
-<rect width="720" height="460" fill="#FBFBF9"/>
-<g>
+<rect width="860" height="470" fill="#FBFBF9"/>
+<!-- 整机居中：主体锚点 (140..580, 60..420) 平移到画布中心 -->
+<g transform="translate(28, 6)">
   <g>
-     <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="url(#steel-steam-jet)" stroke="none"/>
-     <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="url(#tex-steam-jet)" opacity=".32" stroke="none"/>
-     <path d="M214 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
-   </g>
-  <g>
-     <path d="M214 256 h252 l-72 82 h-108 z" fill="url(#steel-steam-jet)" stroke="none"/>
-     <path d="M214 256 h252 l-72 82 h-108 z" fill="url(#tex-steam-jet)" opacity=".32" stroke="none"/>
-     <path d="M214 256 h252 l-72 82 h-108 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+     <path d="M204 110 a10 10 0 0 1 10 -10 H446 a10 10 0 0 1 10 10 V256 L384 338 H276 L204 256 z" fill="url(#steel-steam-jet)" stroke="none"/>
+     <path d="M204 110 a10 10 0 0 1 10 -10 H446 a10 10 0 0 1 10 10 V256 L384 338 H276 L204 256 z" fill="url(#tex-steam-jet)" opacity=".32" stroke="none"/>
+     <path d="M204 110 a10 10 0 0 1 10 -10 H446 a10 10 0 0 1 10 10 V256 L384 338 H276 L204 256 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <rect x="298" y="338" width="64" height="24" fill="url(#steel-steam-jet)" stroke="#15171A" stroke-width="1.4"/>
   <!-- 保温层：双线外包 -->
@@ -82,7 +78,8 @@
     <path d="M386 320 l-24 -28"/><path d="M422 314 l-32 -26"/>
   </g>
   <circle cx="330" cy="288" r="3.2" fill="#B0470E"/>
-  <text x="338" y="280" class="s">喷嘴出口 1020 m/s</text>
+  <text x="172" y="330" class="s" text-anchor="end">喷嘴出口 1020 m/s</text>
+  <line x1="180" y1="326" x2="256" y2="306" stroke="#C9CCC7" stroke-width="1"/>
   <path d="M462 210 H590" stroke="#1F6B43" stroke-width="1.6" marker-end="url(#arg-steam-jet)"/>
   <text x="470" y="228" class="s">细粉 → 保温收集</text>
   <path d="M214 202 H152 v100 H238" stroke="#8B9098" stroke-width="1.2"

@@ -15,7 +15,7 @@ const C = {
   accent: '#B0470E', blue: '#1A4FA0', ok: '#1F6B43',
   paper: '#FBFBF9',
 };
-const W = 720, H = 460;
+const W = 860, H = 470;
 
 const defs = (id) => `
   <defs>
@@ -39,6 +39,25 @@ const defs = (id) => `
     </marker>
   </defs>`;
 
+// 对称腔体：给定中心、半宽、顶、腰、底宽，左右严格镜像
+function vessel(id, {cx, top, waist, bottom, halfW, halfBottom, radius = 10}) {
+  const l = cx - halfW, r = cx + halfW;      // 上口左右
+  const lb = cx - halfBottom, rb = cx + halfBottom; // 下口左右
+  // 从左圆角起点开始，保证左右边界严格为 l 与 r
+  const d = [
+    `M${l} ${top + radius}`,
+    `a${radius} ${radius} 0 0 1 ${radius} ${-radius}`,      // 左上圆角
+    `H${r - radius}`,
+    `a${radius} ${radius} 0 0 1 ${radius} ${radius}`,       // 右上圆角
+    `V${waist}`,                                             // 右侧直壁
+    `L${rb} ${bottom}`,                                      // 右斜边
+    `H${lb}`,                                                // 底边
+    `L${l} ${waist}`,                                        // 左斜边
+    'z',
+  ].join(' ');
+  return d;
+}
+
 // 通用：带钢质填充的腔体
 const shell = (id, d, extra = '') =>
   `<g>
@@ -52,8 +71,7 @@ function mqw(id) {
   const cx = 330;
   return `
   <!-- 腔体：上圆筒 + 下锥斗 -->
-  ${shell(id, `M${cx - 118} 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z`)}
-  ${shell(id, `M${cx - 118} 256 h256 l-74 84 h-108 z`)}
+  ${shell(id, vessel(id, {cx, top: 96, waist: 256, bottom: 340, halfW: 128, halfBottom: 54}))}
   <!-- 出料口 -->
   <rect x="${cx - 34}" y="340" width="68" height="26" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <rect x="${cx - 52}" y="366" width="104" height="12" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.2"/>
@@ -122,8 +140,7 @@ function mql(id) {
   const cx = 330;
   return `
   <!-- 更高的直筒 + 平底锥斗：立式转子 -->
-  ${shell(id, `M${cx - 104} 84 h208 a10 10 0 0 1 10 10 v190 h-228 v-190 a10 10 0 0 1 10 -10 z`)}
-  ${shell(id, `M${cx - 104} 284 h228 l-64 74 h-100 z`)}
+  ${shell(id, vessel(id, {cx, top: 84, waist: 284, bottom: 358, halfW: 114, halfBottom: 50}))}
   <rect x="${cx - 30}" y="358" width="60" height="24" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <!-- 立式转子：一根长轴 + 单个顶部叶轮 -->
   <line x1="${cx}" y1="132" x2="${cx}" y2="284" stroke="${C.blue}" stroke-width="1.6"/>
@@ -189,8 +206,7 @@ function mqp(id) {
 function steam(id) {
   const cx = 330;
   return `
-  ${shell(id, `M${cx - 116} 100 h232 a10 10 0 0 1 10 10 v146 h-252 v-146 a10 10 0 0 1 10 -10 z`)}
-  ${shell(id, `M${cx - 116} 256 h252 l-72 82 h-108 z`)}
+  ${shell(id, vessel(id, {cx, top: 100, waist: 256, bottom: 338, halfW: 126, halfBottom: 54}))}
   <rect x="${cx - 32}" y="338" width="64" height="24" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <!-- 保温层：双线外包 -->
   <path d="M${cx - 132} 90 v176 M${cx + 132} 90 v176" stroke="${C.line}" stroke-width="1" stroke-dasharray="3 5"/>
@@ -214,7 +230,8 @@ function steam(id) {
     <path d="M${cx + 56} 320 l-24 -28"/><path d="M${cx + 92} 314 l-32 -26"/>
   </g>
   <circle cx="${cx}" cy="288" r="3.2" fill="${C.accent}"/>
-  <text x="${cx + 8}" y="280" class="s">喷嘴出口 1020 m/s</text>
+  <text x="${cx - 158}" y="330" class="s" text-anchor="end">喷嘴出口 1020 m/s</text>
+  <line x1="${cx - 150}" y1="326" x2="${cx - 74}" y2="306" stroke="${C.soft}" stroke-width="1"/>
   <path d="M${cx + 132} 210 H590" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
   <text x="${cx + 140}" y="228" class="s">细粉 → 保温收集</text>
   <path d="M${cx - 116} 202 H152 v100 H${cx - 92}" stroke="${C.line}" stroke-width="1.2"
@@ -367,8 +384,7 @@ function mz(id) {
 function classifier(id) {
   const cx = 300;
   return `
-  ${shell(id, `M${cx - 96} 96 h192 a10 10 0 0 1 10 10 v170 h-212 v-170 a10 10 0 0 1 10 -10 z`)}
-  ${shell(id, `M${cx - 96} 276 h212 l-56 76 h-100 z`)}
+  ${shell(id, vessel(id, {cx, top: 96, waist: 266, bottom: 352, halfW: 106, halfBottom: 50}))}
   <rect x="${cx - 28}" y="352" width="56" height="26" fill="url(#steel-${id})" stroke="${C.ink}" stroke-width="1.4"/>
   <!-- 进料从下端 -->
   <line x1="${cx - 150}" y1="300" x2="${cx - 96}" y2="300" stroke="${C.ink}" stroke-width="1.5" marker-end="url(#ar-${id})"/>
@@ -389,7 +405,7 @@ function classifier(id) {
     <path d="M${cx - 92} 268 v-34" marker-end="url(#ar-${id})"/>
     <path d="M${cx + 92} 268 v-34" marker-end="url(#ar-${id})"/>
   </g>
-  <text x="${cx - 100}" y="262" class="s" text-anchor="end">二次风淘洗</text>
+  <text x="${cx - 112}" y="246" class="s" text-anchor="end">二次风淘洗</text>
   <line x1="${cx - 96}" y1="196" x2="${cx + 106}" y2="196" stroke="${C.soft}" stroke-width="1" stroke-dasharray="5 4"/>
   <path d="M${cx + 106} 226 H560" stroke="${C.ok}" stroke-width="1.6" marker-end="url(#arg-${id})"/>
   <text x="${cx + 114}" y="212" class="s">细粉 → 收集</text>
@@ -407,7 +423,8 @@ ${defs(id)}
   .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
 </style>
 <rect width="${W}" height="${H}" fill="${C.paper}"/>
-<g>${body}</g>
+<!-- 整机居中：主体锚点 (140..580, 60..420) 平移到画布中心 -->
+<g transform="translate(28, 6)">${body}</g>
 </svg>`;
   fs.writeFileSync(path.join(OUT, `cutaway-${id}.svg`), svg);
   console.log('wrote cutaway-' + id + '.svg', svg.length, 'bytes');

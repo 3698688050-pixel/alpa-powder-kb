@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="860" height="470" role="img">
 
   <defs>
     <pattern id="tex-mqw" patternUnits="userSpaceOnUse" width="880" height="705">
@@ -24,18 +24,14 @@
   .h{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#15171A}
   .s{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#6E747B}
 </style>
-<rect width="720" height="460" fill="#FBFBF9"/>
-<g>
+<rect width="860" height="470" fill="#FBFBF9"/>
+<!-- 整机居中：主体锚点 (140..580, 60..420) 平移到画布中心 -->
+<g transform="translate(28, 6)">
   <!-- 腔体：上圆筒 + 下锥斗 -->
   <g>
-     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#steel-mqw)" stroke="none"/>
-     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="url(#tex-mqw)" opacity=".32" stroke="none"/>
-     <path d="M212 96 h236 a10 10 0 0 1 10 10 v150 h-256 v-150 a10 10 0 0 1 10 -10 z" fill="none" stroke="#15171A" stroke-width="1.6" />
-   </g>
-  <g>
-     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#steel-mqw)" stroke="none"/>
-     <path d="M212 256 h256 l-74 84 h-108 z" fill="url(#tex-mqw)" opacity=".32" stroke="none"/>
-     <path d="M212 256 h256 l-74 84 h-108 z" fill="none" stroke="#15171A" stroke-width="1.6" />
+     <path d="M202 106 a10 10 0 0 1 10 -10 H448 a10 10 0 0 1 10 10 V256 L384 340 H276 L202 256 z" fill="url(#steel-mqw)" stroke="none"/>
+     <path d="M202 106 a10 10 0 0 1 10 -10 H448 a10 10 0 0 1 10 10 V256 L384 340 H276 L202 256 z" fill="url(#tex-mqw)" opacity=".32" stroke="none"/>
+     <path d="M202 106 a10 10 0 0 1 10 -10 H448 a10 10 0 0 1 10 10 V256 L384 340 H276 L202 256 z" fill="none" stroke="#15171A" stroke-width="1.6" />
    </g>
   <!-- 出料口 -->
   <rect x="296" y="340" width="68" height="26" fill="url(#steel-mqw)" stroke="#15171A" stroke-width="1.4"/>
